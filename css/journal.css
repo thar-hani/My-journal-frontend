@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #b0b7cc;
+  background: #d6dbe8;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -70,7 +70,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #374151;
+  color: #2f3d54;
   text-decoration: none;
   transition: background 0.2s;
 }
@@ -96,43 +96,32 @@ header {
   width: 300px;
   background: #fff;
   padding: 20px;
-  overflow-y: auto;
-}
-
-.sidebar h1 {
-  font-size: 1.1em;
-  color: #0a0909;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .search-box input {
   width: 100%;
   padding: 8px 10px;
-  border: 1.5px solid #b1a2ec;
+  border: 1.5px solid #0f0d14;
   border-radius: 6px;
   margin-bottom: 15px;
 }
 
 .filters h2 {
-  font-size: 1em;
   margin-bottom: 8px;
-  color: #8c84ca;
+  color: #24222e;
 }
 
 .dropdowns select {
   width: 100%;
   padding: 6px 8px;
   margin-bottom: 10px;
-  border: 1.5px solid #b1a2ec;
+  border: 1.5px solid #08031e;
   border-radius: 6px;
 }
 
 .favorites-btn {
   width: 100%;
   background: #f4f4ff;
-  border: 1px solid #dcdcff;
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
@@ -146,12 +135,12 @@ header {
 /* Entries */
 .entries h3 {
   margin-top: 20px;
-  margin-bottom: 10px;
-  color: #444;
+  margin-bottom: 20px;
+  color: #0c0c0c;
 }
 
 .entry {
-  background: #b0b7cc;
+  background: #cdcfd6;
   padding: 12px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -160,7 +149,7 @@ header {
 }
 
 .entry.yellow {
-  background: #dad3ba;
+  background: #d8d3c1;
 }
 
 .entry-title {
@@ -170,19 +159,19 @@ header {
 
 .entry-date {
   font-size: 0.8em;
-  color: #666;
+  color: #272222;
   margin-bottom: 5px;
 }
 
 .entry-text {
   font-size: 0.9em;
-  color: #555;
+  color: #111111;
   margin-bottom: 8px;
 }
 
 .tag {
   display: inline-block;
-  background: #e6e6ff;
+  background: #ececf8;
   padding: 3px 8px;
   border-radius: 5px;
   font-size: 0.75em;
@@ -193,7 +182,6 @@ header {
 .main {
   flex: 1;
   padding: 30px;
-  overflow-y: auto;
 }
 
 .main label {
@@ -207,7 +195,7 @@ header {
 
 .date input {
   padding: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid ;
   border-radius: 6px;
 }
 
@@ -227,7 +215,7 @@ header {
 .title-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px ;
   border-radius: 6px;
   margin-bottom: 10px;
 }
@@ -236,7 +224,7 @@ textarea {
   width: 100%;
   height: 180px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px ;
   border-radius: 6px;
   resize: none;
   margin-bottom: 10px;
@@ -245,7 +233,7 @@ textarea {
 .tags input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px ;
   border-radius: 6px;
   margin-bottom: 15px;
 }
@@ -276,12 +264,12 @@ textarea {
 }
 
 .save {
-  background: #6c63ff;
+  background: #89888b;
   color: white;
 }
 
 .save:hover {
-  background: #5a55d6;
+  background: #b4b4b5;
 }
 
 /* --- Toolbar Styling --- */
@@ -303,11 +291,10 @@ textarea {
 }
 
 .tool-btn:hover {
-  background: #6c63ff;
+  background: #49476e;
   color: #fff;
 }
 
-/* --- Simple CSS-only toggle effects for demo --- */
 #bold-btn:active ~ textarea {
   font-weight: bold;
 }
@@ -318,24 +305,18 @@ textarea {
   text-decoration: underline;
 }
 #highlight-btn:active ~ textarea {
-  background-color: #fff79a;
+  background-color: #bd2f25;
 }
 
-/* Extend textarea size */
 main textarea {
   width: 100%;
-  height: 250px; /* increased height */
+  height: 250px; 
   padding: 12px;
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  resize: vertical; /* allows user to drag and resize if they want */
+  resize: vertical; 
   font-family: "Poppins", sans-serif;
   transition: border-color 0.3s;
-}
 
-main textarea:focus {
-  outline: none;
-  border-color: #6c63ff;
-  box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
 }
