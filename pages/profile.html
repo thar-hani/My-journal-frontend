@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal - Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/profile.css" />
+  </head>
+  <body>
+  <header>
+    <div class="left-section">
+      <i class="fa-solid fa-book"></i>
+      <div class="logo">My Journal</div>
+    </div>
+
+    <div class="top-buttons">
+      <a href="../index.html" class="home-btn"> <i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="../pages/setting.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
+      <a href="../Pages/profile.html" class="icon-btn"><i class="fa-solid fa-user"></i></a>
+      <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+      <a href="../Pages/login.html" class="icon-btn logout"> <i class="fa-solid fa-right-from-bracket"></i> </a>
+    </div>
+  </header>
+    <div class="profile-box">
+      <div class="profile-header">
+        <h2>My Journal</h2>
+        <p>Your personal profile</p>
+      </div>
+
+      <div class="profile-pic">
+        <img src="" alt="Profile Picture" />
+        <label for="upload-photo" class="select-btn">Select Photo</label>
+        <input type="file" id="upload-photo" accept="image/*" />
+      </div>
+
+      <form class="profile-form">
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name" required />
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required />
+      </form>
+      <br />
+      <a class="edit-btn" href="./edit_profile.html">Edit Profile</a>
+      <div class="back-section">
+        <a href="../index.html" class="back-btn">← Back to home</a>
+      </div>
+    </div>
+  </body>
+</html>

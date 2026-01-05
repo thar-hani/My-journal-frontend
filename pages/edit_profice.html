@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/edit_profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+<body>
+  <header>
+    <div class="left-section">
+      <i class="fa-solid fa-book"></i>
+      <div class="logo">My Journal</div>
+    </div>
+
+    <div class="top-buttons">
+      <a href="../index.html" class="home-btn"> <i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="../pages/setting.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
+      <a href="../Pages/profile.html" class="icon-btn"><i class="fa-solid fa-user"></i></a>
+      <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+      <a href="../Pages/login.html" class="icon-btn logout"> <i class="fa-solid fa-right-from-bracket"></i> </a>
+    </div>
+  </header>
+  
+    <div class="container">
+      <div class="edit-box">
+        <div class="header">
+          <a href="../Pages/profile.html" class="back-btn">← Back</a>
+          <h2>Edit Profile</h2>
+        </div>
+
+        <form>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Enter your age" required />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="password">New Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter new password"
+            required
+          />
+
+          <label for="confirm">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm"
+            placeholder="Re-enter new password"
+            required
+          />
+
+          <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

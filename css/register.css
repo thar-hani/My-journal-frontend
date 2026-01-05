@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #f0f4f9;
+  min-height: 100vh;
+}
+
+/* ---------- NAVBAR ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 30px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left-section i {
+  color: #1a73e8;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9c6fe4;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.icon-btn:hover {
+  background: #11101f;
+  color: #fff;
+}
+
+.icon-btn.logout {
+  background: #ffecec;
+  color: #b10000;
+}
+
+/* ---------- PAGE CENTER ---------- */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+/* ---------- REGISTER BOX ---------- */
+.container {
+  background: #fff;
+  width: 340px;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-box {
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #1a73e8;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.tabs a,
+.tabs p {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+}
+
+.tabs .active {
+  color: #1a73e8;
+  border-bottom: 2px solid #1a73e8;
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #1669c1;
+}
+
+.extra-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.extra-links a {
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.secure {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #555;
+}

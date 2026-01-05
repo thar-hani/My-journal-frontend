@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Journal – To-Do</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/to-do.css" />
+</head>
+<body>
+
+  
+  <header>
+    <div class="left-section">
+      <i class="fa-solid fa-book"></i>
+      <div class="logo">My Journal</div>
+    </div>
+
+    <div class="top-buttons">
+      <a href="../index.html" class="home-btn"> <i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="../pages/setting.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
+      <a href="../Pages/profile.html" class="icon-btn"><i class="fa-solid fa-user"></i></a>
+      <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+      <a href="../Pages/login.html" class="icon-btn logout"> <i class="fa-solid fa-right-from-bracket"></i> </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="todo-container">
+
+      <h2>Today’s Focus</h2>
+
+      <form class="todo-form">
+        <input
+          type="text"
+          placeholder="What do you want to accomplish today?"
+          required
+        />
+
+        <input type="date" required />
+        <input type="time" required />
+
+        <button type="submit" class="add-btn">
+          Add Task
+        </button>
+      </form>
+
+      <ul class="todo-list">
+
+        <li>
+          <div class="task-top">
+            <input type="checkbox" />
+            <span>Finish my journal entry</span>
+          </div>
+          <small> 13 Nov 2025 •  09:00 PM •  Pending</small>
+        </li>
+
+        <li>
+          <div class="task-top">
+            <input type="checkbox" checked />
+            <span>Read for 20 minutes</span>
+          </div>
+          <small> 14 Nov 2025 •  08:00 AM •  Completed</small>
+        </li>
+
+        <li>
+          <div class="task-top">
+            <input type="checkbox" />
+            <span>Go for a short walk</span>
+          </div>
+          <small> 14 Nov 2025 •  06:30 PM •  Pending</small>
+        </li>
+      </ul>
+      <p class="footer-quote">
+        One task at a time. You’re doing great 
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>

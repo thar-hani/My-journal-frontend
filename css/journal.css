@@ -1,0 +1,341 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #b0b7cc;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left-section i {
+  color: #4f46e5;
+  font-size: 18px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #4f46e5;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.home-btn i {
+  font-size: 13px;
+}
+
+.home-btn:hover {
+  background: #3f38ca;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+}
+
+.icon-btn.logout {
+  background: #fee2e2;
+  color: #ae4141;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex: 1;
+  height: min(800px , 70px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  font-size: 1.1em;
+  color: #0a0909;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #b1a2ec;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.filters h2 {
+  font-size: 1em;
+  margin-bottom: 8px;
+  color: #8c84ca;
+}
+
+.dropdowns select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 10px;
+  border: 1.5px solid #b1a2ec;
+  border-radius: 6px;
+}
+
+.favorites-btn {
+  width: 100%;
+  background: #f4f4ff;
+  border: 1px solid #dcdcff;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.favorites-btn:hover {
+  background: #e5e5ff;
+}
+
+/* Entries */
+.entries h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.entry {
+  background: #b0b7cc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.entry.yellow {
+  background: #dad3ba;
+}
+
+.entry-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.entry-date {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.entry-text {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: #e6e6ff;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  margin-right: 5px;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.main label {
+  font-weight: 500;
+}
+
+.date,
+.mood {
+  margin-bottom: 15px;
+}
+
+.date input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.emojis button {
+  background: none;
+  border: none;
+  font-size: 1.4em;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+
+.emojis button:hover {
+  transform: scale(1.2);
+}
+
+.title-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.tags input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel,
+.save {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cancel {
+  background: #fcfcfc;
+  color: #333;
+}
+
+.cancel:hover {
+  background: #d2d2f1;
+}
+
+.save {
+  background: #6c63ff;
+  color: white;
+}
+
+.save:hover {
+  background: #5a55d6;
+}
+
+/* --- Toolbar Styling --- */
+.text-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.tool-btn {
+  background: #f1f1f1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.tool-btn:hover {
+  background: #6c63ff;
+  color: #fff;
+}
+
+/* --- Simple CSS-only toggle effects for demo --- */
+#bold-btn:active ~ textarea {
+  font-weight: bold;
+}
+#italic-btn:active ~ textarea {
+  font-style: italic;
+}
+#underline-btn:active ~ textarea {
+  text-decoration: underline;
+}
+#highlight-btn:active ~ textarea {
+  background-color: #fff79a;
+}
+
+/* Extend textarea size */
+main textarea {
+  width: 100%;
+  height: 250px; /* increased height */
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical; /* allows user to drag and resize if they want */
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+main textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
+}
