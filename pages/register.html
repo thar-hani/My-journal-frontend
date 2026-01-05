@@ -1,78 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Journal - Register</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal - Register</title>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="../css/register.css" />
-</head>
-<body>
-  <header>
-    <div class="left-section">
-      <i class="fa-solid fa-book"></i>
-      <div class="logo">My Journal</div>
-    </div>
+    <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left-section">
+        <i class="fa-solid fa-book"></i>
+        <div class="logo">My Journal</div>
+      </div>
 
-    <div class="top-buttons">
-      <a href="../Pages/settings.html" class="icon-btn"><i class="fa-solid fa-gear"></i></a>
-      <a href="../pages/profile.html" class="icon-btn"><i class="fa-solid fa-user"></i></a>
-      <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
-      <a href="../Pages/login.html" class="icon-btn logout">
-        <i class="fa-solid fa-right-from-bracket"></i>
-      </a>
-    </div>
-  </header>
+      <div class="top-buttons">
+        <a href="./setting.html" class="icon-btn"
+          ><i class="fa-solid fa-gear"></i
+        ></a>
+        <a href="./profile.html" class="icon-btn"
+          ><i class="fa-solid fa-user"></i
+        ></a>
+        <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+        <a href="./login.html" class="icon-btn logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
 
-  <div class="page-wrapper">
-    <div class="container">
-      <div class="login-box">
-        <h2>My Journal</h2>
-        <p>Create your account</p>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="login-box">
+          <h2>My Journal</h2>
+          <p>Create your account</p>
 
-        <div class="tabs">
-          <a href="../Pages/login.html">Login</a>
-          <p class="active">Register</p>
+          <div class="tabs">
+            <a href="./login.html">Login</a>
+            <p class="active">Register</p>
+          </div>
+
+          <form>
+            <label>Full Name</label>
+            <div class="input-field">
+              <input type="text" placeholder="Enter your name" required />
+            </div>
+
+            <label>Email</label>
+            <div class="input-field">
+              <input type="email" placeholder="Enter your email" required />
+            </div>
+
+            <label>Password</label>
+            <div class="input-field">
+              <input type="password" placeholder="Enter password" required />
+            </div>
+
+            <label>Confirm Password</label>
+            <div class="input-field">
+              <input type="password" placeholder="Confirm password" required />
+            </div>
+
+            <button class="login-btn">Register</button>
+
+            <div class="extra-links">
+              <a href="./login.html">Already have an account? Login</a>
+            </div>
+
+            <p class="secure">Secure & Private</p>
+          </form>
         </div>
-
-        <form>
-          <label>Full Name</label>
-          <div class="input-field">
-            <input type="text" placeholder="Enter your name" required />
-          </div>
-
-          <label>Email</label>
-          <div class="input-field">
-            <input type="email" placeholder="Enter your email" required />
-          </div>
-
-          <label>Password</label>
-          <div class="input-field">
-            <input type="password" placeholder="Enter password" required />
-          </div>
-
-          <label>Confirm Password</label>
-          <div class="input-field">
-            <input type="password" placeholder="Confirm password" required />
-          </div>
-
-          <button class="login-btn">Register</button>
-
-          <div class="extra-links">
-            <a href="../Pages/login.html">Already have an account? Login</a>
-          </div>
-
-          <p class="secure"> Secure & Private</p>
-        </form>
       </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
