@@ -1,6 +1,4 @@
-/* =====================
-   Global Reset
-===================== */
+/* Global Reset*/
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* =====================
-   Body
-===================== */
+/* Body */
 body {
   background: #f4f6fb;
   min-height: 100vh;
@@ -18,10 +14,15 @@ body {
   flex-direction: column;
   color: #111827;
 }
+.img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
 
-/* =====================
-   Navbar
-===================== */
 header {
   display: flex;
   justify-content: space-between;
@@ -73,16 +74,15 @@ header {
   background: #fee2e2;
   color: #991b1b;
 }
-
-/* =====================
-   Home Button
-===================== */
+.wish_list{
+  color: white;
+}
 .home-btn {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #560a0d;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -94,13 +94,9 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #6b1818;
 }
 
-
-/* =====================
-   Main Container
-===================== */
 .container {
   flex: 1;
   max-width: 1100px;
@@ -111,26 +107,20 @@ header {
 
 .subtitle {
   font-size: 15px;
-  color: #6b7280;
+  color: #fdfeff;
   margin-bottom: 40px;
 }
 
-/* =====================
-   Card Layout
-===================== */
 .card-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* =====================
-   Card
-===================== */
 .card {
   background: #ffffff;
-  width: 260px;
+  width: 200px;
   padding: 22px;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
@@ -140,13 +130,10 @@ header {
 .card h3 {
   font-size: 16px;
   font-weight: 500;
-  color: #4f46e5;
+  color: #09090a;
   margin-bottom: 12px;
 }
 
-/* =====================
-   Textarea
-===================== */
 textarea {
   width: 100%;
   min-height: 90px;
@@ -160,19 +147,16 @@ textarea {
 
 textarea:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #6d6c70;
 }
 .sub-btn{
   width:100%; text-align:center; margin-top:30px;
 }
-/* =====================
-   Save Button
-===================== */
 .card button {
   width: 100%;
   padding: 8px;
   font-size: 13px;
-  background: #4f46e5;
+  background: #771212;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -180,49 +164,41 @@ textarea:focus {
 }
 
 .card button:hover {
-  background: #4338ca;
+  background: #842326;
 }
 
-/* =====================
-   Submit Button
-===================== */
 .submit-btn {
   margin-top: 30px;
   padding: 12px 34px;
   font-size: 14px;
-  background: #111827;
-  color: #ffffff;
+  background: #ecedee;
+  color: #060505;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  background: #374151;
+  background: #d0d2d7;
 }
 
-/* =====================
-   Footer
-===================== */
 .footer {
   text-align: center;
   padding: 14px;
   font-size: 13px;
-  color: #6b7280;
+  color: #0f0f0f;
   border-top: 1px solid #e5e7eb;
   background: #ffffff;
 }
 
-/* =====================
-   Responsive
-===================== */
-@media (max-width: 768px) {
-  .container {
-    padding: 40px 16px;
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .card {
-    width: 100%;
-    max-width: 360px;
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
   }
 }

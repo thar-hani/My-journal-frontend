@@ -18,6 +18,15 @@ header {
   border-bottom: 1px solid #e5e7eb;
 }
 
+.img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
 .left-section {
   display: flex;
   align-items: center;
@@ -33,7 +42,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #653535;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -45,7 +54,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #c25454;
 }
 
 .logo {
@@ -108,7 +117,7 @@ header {
 
 .edit-box h2 {
   font-size: 22px;
-  color: #1a73e8;
+  color: #ac5252;
 }
 
 /* Back button */
@@ -117,13 +126,13 @@ header {
   padding: 6px 12px;
   border-radius: 8px;
   background: #e8f0fe;
-  color: #1a73e8;
+  color: #500909;
   font-size: 14px;
   margin-right:25px ;
 }
 
 .back-btn:hover {
-  background: #1a73e8;
+  background: #6b212d;
   color: #fff;
 }
 
@@ -147,7 +156,7 @@ form input {
 
 form input:focus {
   outline: none;
-  border-color: #1a73e8;
+  border-color: #090606;
 }
 
 /* Save button */
@@ -155,7 +164,7 @@ form input:focus {
   width: 100%;
   margin-top: 20px;
   padding: 12px;
-  background: #1a73e8;
+  background: #600d11;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -165,7 +174,7 @@ form input:focus {
 }
 
 .save-btn:hover {
-  background: #1669c1;
+  background: #a41e1e;
 }
 
 /* =====================

@@ -13,6 +13,16 @@ body {
   height: 100vh;
   color: #333;
 }
+
+.img {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -42,7 +52,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #4f0f0f;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -54,7 +64,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #3f38ca;
+  background: #711616;
 }
 
 .top-buttons {
@@ -180,7 +190,7 @@ header {
 
 /* Main Content */
 .main {
-  flex: 1;
+  flex:1;
   padding: 30px;
 }
 
@@ -256,7 +266,7 @@ textarea {
 
 .cancel {
   background: #fcfcfc;
-  color: #333;
+  color: #3e0f0f;
 }
 
 .cancel:hover {
@@ -264,8 +274,8 @@ textarea {
 }
 
 .save {
-  background: #89888b;
-  color: white;
+  background: #f8f6f6;
+  color: rgb(10, 10, 10);
 }
 
 .save:hover {

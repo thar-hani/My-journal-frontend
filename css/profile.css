@@ -1,6 +1,4 @@
-/* =====================
-   Global
-===================== */
+/*  Global */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +10,15 @@ body {
   background: #f8f9ff;
   min-height: 100vh;
 }
+.img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +48,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #6c2e33;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -53,7 +60,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #953b3b;
 }
 
 .top-buttons {
@@ -69,7 +76,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #374151;
+  color: #0d1013;
   text-decoration: none;
   transition: background 0.2s;
 }
@@ -106,7 +113,7 @@ header {
 
 .profile-header p {
   font-size: 14px;
-  color: #6b7280;
+  color: #0f1012;
   margin: 8px 0 25px;
 }
 
@@ -124,7 +131,7 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 3px solid #5a3dff;
+  border: 3px solid #630e0e;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -134,7 +141,7 @@ header {
 }
 
 .select-btn {
-  background: #5a3dff;
+  background: #4c0508;
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 8px;
@@ -143,7 +150,7 @@ header {
 }
 
 .select-btn:hover {
-  background: #4a2de0;
+  background: #7c1010;
 }
 
 /* =====================
@@ -172,7 +179,7 @@ header {
 
 .profile-form input:focus {
   outline: none;
-  border-color: #5a3dff;
+  border-color: #720b0b;
 }
 
 /* =====================
@@ -181,7 +188,7 @@ header {
 .edit-btn {
   display: block;
   width: 100%;
-  background: #5a3dff;
+  background: #4f0809;
   color: #ffffff;
   padding: 10px;
   border-radius: 8px;
@@ -191,7 +198,7 @@ header {
 }
 
 .edit-btn:hover {
-  background: #4a2de0;
+  background: #6c0c0e;
 }
 
 /* Back Button */
@@ -203,14 +210,14 @@ header {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid #5a3dff;
-  color: #5a3dff;
+  border: 1px solid #4b0707;
+  color: #952727;
   font-size: 14px;
   text-decoration: none;
 }
 
 .back-btn:hover {
-  background: #5a3dff;
+  background: #560808;
   color: #ffffff;
 }
 

@@ -4,7 +4,14 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+.img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
 /* BODY */
 body {
   background-color: #f0f4f9;
@@ -29,7 +36,7 @@ header {
 }
 
 .left-section i {
-  color: #1a73e8;
+  color: #101111;
 }
 
 .logo {
@@ -87,7 +94,7 @@ header {
 }
 
 .login-box h2 {
-  color: #1a73e8;
+  color: #0a0a0a;
 }
 
 .tabs {
@@ -104,8 +111,8 @@ header {
 }
 
 .tabs .active {
-  color: #1a73e8;
-  border-bottom: 2px solid #1a73e8;
+  color: #601515;
+  border-bottom: 2px solid #630f0f;
 }
 
 form {
@@ -136,7 +143,7 @@ label {
 .login-btn {
   width: 100%;
   padding: 10px;
-  background: #1a73e8;
+  background: #660f0f;
   color: white;
   border: none;
   border-radius: 8px;
@@ -146,7 +153,7 @@ label {
 }
 
 .login-btn:hover {
-  background: #1669c1;
+  background: #811b1b;
 }
 
 .extra-links {
@@ -155,7 +162,7 @@ label {
 }
 
 .extra-links a {
-  color: #1a73e8;
+  color: #76313b;
   font-size: 14px;
   text-decoration: none;
 }
@@ -164,5 +171,5 @@ label {
   text-align: center;
   margin-top: 15px;
   font-size: 13px;
-  color: #555;
+  color: #141414;
 }

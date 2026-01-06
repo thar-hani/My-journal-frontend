@@ -13,7 +13,14 @@ body {
   color: #333;
   min-height: 100vh;
 }
-
+.img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -8;
+  height: 100%;
+  width: 100%;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -43,7 +50,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #731818;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -55,7 +62,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #902525;
 }
 
 .top-buttons {
@@ -126,12 +133,12 @@ main {
 
 .todo-form input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #b8b8c6;
 }
 
 .add-btn {
   padding: 12px;
-  background: #4f46e5;
+  background: #5b1c1c;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -140,7 +147,7 @@ main {
 }
 
 .add-btn:hover {
-  background: #4338ca;
+  background: #581b1b;
 }
 
 /* =====================
@@ -189,7 +196,7 @@ input[type="checkbox"]:checked + span {
   margin-top: 20px;
   text-align: center;
   font-size: 14px;
-  color: #4f46e5;
+  color: #030209;
   font-weight: 500;
 }
 
