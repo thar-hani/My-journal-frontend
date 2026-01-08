@@ -35,7 +35,7 @@ header {
 }
 
 .left-section i {
-  color: #472415;
+  color: #3945e4;
   font-size: 18px;
 }
 
@@ -48,7 +48,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f46e5;
+  background: #762121;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -60,7 +60,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #a82222;
 }
 
 .top-buttons {

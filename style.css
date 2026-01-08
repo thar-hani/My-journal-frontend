@@ -1,12 +1,10 @@
-/* RESET */
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-/* BODY */
 body {
   background: #f7f9fc;
   min-height: 100vh;
@@ -14,7 +12,6 @@ body {
   flex-direction: column;
 }
 
-/* NAVBAR */
 .navbar {
   background: #ffffff;
   padding: 14px 30px;
@@ -30,6 +27,7 @@ body {
   top: 0px;
   z-index: -1;
   height: 100%;
+    width: 100%;
 }
 .left {
   display: flex;
@@ -75,7 +73,6 @@ body {
   color: #b91c1c;
 }
 
-/* MAIN */
 .container {
   flex: 1;
   text-align: center;
@@ -86,11 +83,12 @@ body {
   font-size: 36px;
   color: #111827;
   margin-bottom: 10px;
+    align-items: center;
 }
 
-.subtitle {
-  color: #f1f2f3;
+.subtitle {  color: #ebedef;
   margin-bottom: 50px;
+  padding-right: 40px;  align-items: center;
 }
 
 /* CARDS */
@@ -129,7 +127,13 @@ body {
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 15px;
+  padding: 15px ;
   font-size: 13px;
-  color: #f2f3f5;
+  color: #f6f7f9; 
+  justify-content: end;
+  margin-bottom: auto;
+}
+.we{
+  justify-items: center;
+
 }
