@@ -12,13 +12,12 @@
   height: 100%;
   width: 100%;
 }
-/* BODY */
+
 body {
   background-color: #f0f4f9;
   min-height: 100vh;
 }
 
-/* ---------- NAVBAR ---------- */
 header {
   display: flex;
   justify-content: space-between;
@@ -72,7 +71,6 @@ header {
   color: #b10000;
 }
 
-/* ---------- PAGE CENTER ---------- */
 .page-wrapper {
   display: flex;
   justify-content: center;
@@ -80,7 +78,6 @@ header {
   height: calc(100vh - 70px);
 }
 
-/* ---------- REGISTER BOX ---------- */
 .container {
   background: #fff;
   width: 500px;
