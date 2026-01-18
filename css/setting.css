@@ -60,7 +60,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #4338ca;
+  background: #a33232;
 }
 
 .top-buttons {
@@ -140,4 +140,10 @@ input[type="time"] {
 .text {
   font-size: 14px;
   color: #0c0c0c;
+}
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

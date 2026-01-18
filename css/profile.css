@@ -203,13 +203,9 @@ header {
   color: #ffffff;
 }
 
-@media (max-width: 480px) {
-  .profile-box {
-    margin: 40px 16px;
-    padding: 30px 20px;
-  }
-
-  .home-btn span {
-    display: none;
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

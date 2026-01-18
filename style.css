@@ -64,7 +64,7 @@ body {
 }
 
 .right a:hover {
-  background: #4f46e5;
+  background: #792d2d;
   color: white;
 }
 
@@ -83,15 +83,16 @@ body {
   font-size: 36px;
   color: #111827;
   margin-bottom: 10px;
-    align-items: center;
+  align-items: center;
 }
 
-.subtitle {  color: #ebedef;
+.subtitle {  
+  color: #ebedef;
   margin-bottom: 50px;
-  padding-right: 40px;  align-items: center;
+  padding-right: 40px;  
+  align-items: center;
 }
 
-/* CARDS */
 .card-container {
   display: flex;
   justify-content: center;
@@ -136,4 +137,11 @@ body {
 .we{
   justify-items: center;
 
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

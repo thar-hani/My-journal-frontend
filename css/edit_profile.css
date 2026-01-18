@@ -136,9 +136,7 @@ header {
   color: #fff;
 }
 
-/* =====================
-   Form
-===================== */
+/*Form */
 form label {
   display: block;
   margin: 12px 0 6px;
@@ -177,15 +175,9 @@ form input:focus {
   background: #a41e1e;
 }
 
-/* =====================
-   Responsive
-===================== */
-@media (max-width: 480px) {
-  .home-btn span {
-    display: none;
-  }
-
-  .edit-box {
-    padding: 24px;
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

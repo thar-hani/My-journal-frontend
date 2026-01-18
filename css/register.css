@@ -170,3 +170,9 @@ label {
   font-size: 13px;
   color: #141414;
 }
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
