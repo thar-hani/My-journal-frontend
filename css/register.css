@@ -6,16 +6,8 @@
 }
 
 body {
-  background-color: #f0f4f9;
+  background-color: #dfdfe0;;
   min-height: 100vh;
-}
-.img {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
 }
 
 header {
@@ -31,11 +23,13 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: blue;
 }
 
 .logo {
-  font-size: 1.18px;
+  font-size: 18px;
   font-weight: 600;
+  color: #0a0a0a;
 }
 
 .top-buttons {
@@ -75,6 +69,7 @@ header {
   width: 500px;
   padding: 25px 30px;
   border-radius: 15px;
+  opacity: 70%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -92,10 +87,9 @@ header {
   margin: 15px 0;
 }
 
-.tabs a,
-.tabs p {
+.tabs a,p {
   text-decoration: none;
-  color: #555;
+  color: #452f2f;
   font-weight: 600;
 }
 

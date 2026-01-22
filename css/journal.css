@@ -7,21 +7,13 @@
 }
 
 body {
-  background: #d6dbe8;
+  background: #dfdfe0;;
   display: flex;
   flex-direction: column;
   height: 100vh;
   color: #333;
 }
 
-.img {
-  position: absolute;
-  /* right: 0px;
-  top: 0px; */
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-}
 
 header {
   display: flex;

@@ -6,15 +6,8 @@
 }
 
 body {
-  background: #f8f9ff;
+  background: #dfdfe0;
   min-height: 100vh;
-}
-.img {
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 header {
@@ -92,10 +85,11 @@ header {
   background: #ffffff;
   width: 100%;
   max-width: 460px;
-  margin: 60px auto;
-  padding: 40px;
+  margin: 90px 50px 60px 500px;
+  padding: 60px;
   border-radius: 16px;
   text-align: center;
+  justify-content: center;
   box-shadow: 8px rgba(0, 0, 0, 0.08);
 }
 

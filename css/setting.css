@@ -5,15 +5,7 @@
 
 body {
   margin: 0;
-  background: #f4f6f8;
-}
-.img {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  height: 165%;
-  width: 100%;
+  background: #dfdfe0;;
 }
 
 header {
@@ -25,7 +17,7 @@ header {
   border-bottom: 1px solid #e5e7eb;
 }
 .set{
-  color:white ;
+  color:rgb(68, 32, 32) ;
   text-align: center;
 }
 .left-section {
