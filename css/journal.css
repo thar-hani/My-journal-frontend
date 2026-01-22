@@ -301,7 +301,6 @@ main textarea {
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  resize: vertical; 
   font-family: "Poppins", sans-serif;
   transition: border-color 0.3s;
 
