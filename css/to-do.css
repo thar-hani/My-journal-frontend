@@ -17,19 +17,13 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
-  padding: 14px 32px;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 12px 20px;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding: 14px 30px;
 }
 
 .left-section {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: auto;
-  justify-content: flex-start;
 }
 
 .left-section i {
@@ -106,7 +100,7 @@ main {
 
 .todo-container h2 {
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 7px;
 }
 
 .todo-form {
@@ -188,5 +182,21 @@ input[type="checkbox"]:checked + span {
   .left-section {
     width: 100%;
     justify-content: space-between;
+  }
+  .logo{
+    font-weight: 100;
+    font-size: 10px;
+  }
+  .top-buttons{
+    gap: 2px;
+  }
+  .home-btn{
+    padding: 5px;
+  }
+  .icon-btn{
+    padding: 4px;
+  }
+  header{
+    padding: 5px;
   }
 }

@@ -310,4 +310,20 @@ main textarea {
     flex-direction: column;
     align-items: center;
   }
+  .top-buttons{
+    gap: 2px;
+  }
+  .home-btn{
+    padding: 5px;
+  }
+  .icon-btn{
+    padding: 4px;
+  }
+  header{
+    padding: 5px;
+  }
+  .container{
+    padding: auto;
+  }
 }
+
