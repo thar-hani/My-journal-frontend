@@ -137,11 +137,6 @@ textarea:focus {
   outline: none;
   border-color: #6d6c70;
 }
-.sub-btn{
-  width:100%; 
-  text-align:center; 
-  margin-top:80px;
-}
 .card button {
   width: 100%;
   padding: 8px;
@@ -157,11 +152,20 @@ textarea:focus {
   background: #842326;
 }
 
+.sub-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width:100%; 
+  text-align:center; 
+  margin-top:80px;
+}
+
 .submit-btn {
-  margin: 10px;
-  padding: 12px 540px 20px 10px;
+
+  padding: 20px ;
   font-size: 14px;
-  background: #ecedee;
+  background: #a0a2a4;
   color: #060505;
   border: none;
   border-radius: 10px;
@@ -169,7 +173,7 @@ textarea:focus {
 }
 
 .submit-btn:hover {
-  background: #d0d2d7;
+  background: #bdbebe;
 }
 
 .footer {
