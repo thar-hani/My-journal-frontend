@@ -1,56 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Journal</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="./style.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="left">
+        <i class="fa-solid fa-book"></i>
+        <h1 class="logo">My Journal</h1>
+      </div>
 
-  <header class="navbar">
-    <div class="left">
-      <i class="fa-solid fa-book"></i>
-      <h1 class="logo">My Journal</h1>
-    </div>
+      <div class="right">
+        <a href="./pages/setting.html"><i class="fa-solid fa-gear"></i></a>
+        <a href="./pages/profile.html"><i class="fa-solid fa-user"></i></a>
+        <a href="#"><i class="fa-solid fa-bell"></i></a>
+        <a href="./pages/login.html" class="logout"
+          ><i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </header>
 
-    <div class="right">
-      <a href="./pages/setting.html"><i class="fa-solid fa-gear"></i></a>
-      <a href="./pages/profile.html"><i class="fa-solid fa-user"></i></a>
-      <a href="#"><i class="fa-solid fa-bell"></i></a>
-      <a href="./pages/login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> </a>
-    </div>
-  </header>
+    <main class="container">
+      <h1>Welcome back</h1>
+      <p class="subtitle">A safe place to write, reflect, and grow</p>
 
-  
-  <main class="container">
-    <h1>Welcome back</h1>
-    <p class="subtitle">A safe place to write, reflect, and grow</p>
+      <div class="card-container">
+        <a href="./pages/journal.html" class="card">
+          <h3>Stories</h3>
+          <p>Start your daily writing</p>
+        </a>
 
-    <div class="card-container">
-      <a href="./pages/journal.html" class="card">
-        <h3>Stories</h3>
-        <p>Start your daily writing</p>
-      </a>
+        <a href="./pages/to-do-list.html" class="card">
+          <h3>To-do</h3>
+          <p>Plan and assign your work</p>
+        </a>
 
-      <a href="./pages/to-do-list.html" class="card">
-        <h3>To-do</h3>
-        <p>Plan and assign your work</p>
-      </a>
+        <a href="./pages/wish-list.html" class="card">
+          <h3>Wish-list</h3>
+          <p>Things you deserve to do</p>
+        </a>
+      </div>
+    </main>
 
-      <a href="./pages/wish-list.html" class="card">
-        <h3>Wish-list</h3>
-        <p>Things you deserve to do</p>
-      </a>
-    </div>
-  </main>
-
-  <footer class="footer">
-    © 2025 My Journal • Write your story, one page at a time
-  </footer>
-
-</body>
+    <footer class="footer">
+      © 2025 My Journal • Write your story, one page at a time
+    </footer>
+  </body>
 </html>
