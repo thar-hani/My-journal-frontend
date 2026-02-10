@@ -29,25 +29,6 @@ header {
   color: #4f46e5;
   font-size: 18px;
 }
-.home-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: #653535;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 8px;
-}
-
-.home-btn i {
-  font-size: 13px;
-}
-
-.home-btn:hover {
-  background: #c25454;
-}
 
 .logo {
   font-size: 18px;
@@ -109,7 +90,7 @@ header {
 
 .edit-box h2 {
   font-size: 22px;
-  color: #ac5252;
+  color: #05000a;
 }
 
 /* Back button */
@@ -118,13 +99,13 @@ header {
   padding: 6px 12px;
   border-radius: 8px;
   background: #e8f0fe;
-  color: #500909;
+  color: #300950;
   font-size: 14px;
   margin-right:25px ;
 }
 
 .back-btn:hover {
-  background: #6b212d;
+  background: #4a216b;
   color: #fff;
 }
 
@@ -154,7 +135,7 @@ form input:focus {
   width: 100%;
   margin-top: 20px;
   padding: 12px;
-  background: #600d11;
+  background: #5f3e76;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -164,7 +145,7 @@ form input:focus {
 }
 
 .save-btn:hover {
-  background: #a41e1e;
+  background: #775485;
 }
 
 @media (max-width: 768px) {

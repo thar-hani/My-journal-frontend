@@ -44,7 +44,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #4f0f0f;
+  background: #8475da;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -56,7 +56,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #711616;
+  background: #9c96bb;
 }
 
 .top-buttons {
@@ -83,7 +83,7 @@ header {
 
 .icon-btn.logout {
   background: #fee2e2;
-  color: #ae4141;
+  color: #c86363;
 }
 
 /* Layout */
@@ -142,7 +142,7 @@ header {
 }
 
 .entry {
-  background: #cdcfd6;
+  background: #d4d1eb;
   padding: 12px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -151,7 +151,7 @@ header {
 }
 
 .entry.yellow {
-  background: #d8d3c1;
+  background: #e6d8a4;
 }
 
 .entry-title {
@@ -255,7 +255,7 @@ textarea {
 
 .cancel {
   background: #fcfcfc;
-  color: #3e0f0f;
+  color: #e21313;
 }
 
 .cancel:hover {

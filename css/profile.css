@@ -115,7 +115,7 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 60%;
-  border: 3px solid #120505;
+  border: 3px solid #684b7b;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -125,7 +125,7 @@ header {
 }
 
 .select-btn {
-  background: #4c0508;
+  background: #5a3675;
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 8px;
@@ -134,7 +134,7 @@ header {
 }
 
 .select-btn:hover {
-  background: #7c1010;
+  background: #4b3060;
 }
 
 .profile-form {
@@ -143,7 +143,7 @@ header {
 
 .profile-form label {
   font-size: 13px;
-  color: #374151;
+  color: #091017;
   margin-bottom: 5px;
   display: block;
 }
@@ -154,18 +154,18 @@ header {
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 14px;
-  background: #fafafa;
+  background: #ffffff;
   margin-bottom: 14px;
 }
 
 .profile-form input:focus {
   outline: none;
-  border-color: #720b0b;
+  border-color: #510b72;
 }
 .edit-btn {
   display: block;
   width: 100%;
-  background: #4f0809;
+  background: #5a3675;
   color: #ffffff;
   padding: 10px;
   border-radius: 8px;
@@ -175,7 +175,7 @@ header {
 }
 
 .edit-btn:hover {
-  background: #6c0c0e;
+  background: #54376a;
 }
 
 .back-section {
@@ -186,16 +186,12 @@ header {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid #4b0707;
-  color: #952727;
+  border: 1px solid #4a067f;
+  color: #5a3675;
   font-size: 14px;
   text-decoration: none;
 }
 
-.back-btn:hover {
-  background: #560808;
-  color: #ffffff;
-}
 
 @media (max-width: 768px) {
   .card-container {

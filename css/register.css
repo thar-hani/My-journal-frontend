@@ -89,12 +89,12 @@ header {
 
 .tabs a,p {
   text-decoration: none;
-  color: #452f2f;
+  color: #5c2178;
   font-weight: 600;
 }
 
 .tabs .active {
-  color: #601515;
+  color: #5c2178;
   border-bottom: 2px solid #630f0f;
 }
 
@@ -126,7 +126,7 @@ label {
 .login-btn {
   width: 100%;
   padding: 10px;
-  background: #660f0f;
+  background: #7d60a0;
   color: white;
   border: none;
   border-radius: 8px;
@@ -136,7 +136,7 @@ label {
 }
 
 .login-btn:hover {
-  background: #811b1b;
+  background: #614a69;
 }
 
 .extra-links {
@@ -145,7 +145,7 @@ label {
 }
 
 .extra-links a {
-  color: #76313b;
+  color: #5d3176;
   font-size: 14px;
   text-decoration: none;
 }

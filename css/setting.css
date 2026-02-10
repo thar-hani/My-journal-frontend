@@ -17,7 +17,7 @@ header {
   border-bottom: 1px solid #e5e7eb;
 }
 .set{
-  color:rgb(68, 32, 32) ;
+  color:rgb(79, 38, 129) ;
   text-align: center;
 }
 .left-section {
@@ -40,7 +40,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: #762121;
+  background: #8661b2;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -52,7 +52,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #a33232;
+  background: #8867a8;
 }
 
 .top-buttons {
@@ -120,13 +120,13 @@ input[type="time"] {
   padding: 6px 12px;
   border: none;
   border-radius: 6px;
-  background: #4a181d;
+  background: #594873;
   color: white;
   cursor: pointer;
 }
 
 .btn.danger {
-  background: #481e1e;
+  background: #594873;
 }
 
 .text {

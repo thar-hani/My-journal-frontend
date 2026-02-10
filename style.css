@@ -56,7 +56,7 @@ body {
 }
 
 .right a:hover {
-  background: #792d2d;
+  background: #6d4c7e;
   color: white;
 }
 
@@ -104,12 +104,12 @@ body {
 
 .card:hover {
   transform: rotate(5deg);
-  background: #968787;
+  background: #b9aaca;
   color: white;
 }
 
 .card h3 {
-  color: #612121;
+  color: #402389;
   margin-bottom: 8px;
 }
 

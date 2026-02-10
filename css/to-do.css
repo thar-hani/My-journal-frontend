@@ -40,7 +40,7 @@ header {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: #731818;
+  background: #8057a4;
   color: #ffffff;
   text-decoration: none;
   font-size: 13px;
@@ -52,7 +52,7 @@ header {
 }
 
 .home-btn:hover {
-  background: #902525;
+  background: #8d63a0;
 }
 
 .top-buttons {
@@ -123,7 +123,7 @@ main {
 
 .add-btn {
   padding: 12px;
-  background: #5b1c1c;
+  background: #644c86;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -132,7 +132,7 @@ main {
 }
 
 .add-btn:hover {
-  background: #581b1b;
+  background: #6d5a88;
 }
 
 .todo-list {
