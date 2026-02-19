@@ -6,61 +6,77 @@
 }
 
 body {
-  background: #dfdfe0;;
+  background: #dfdfe0;
   min-height: 100vh;
 }
+
+body{
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  padding: 14px 32px;
-  border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #f2f2f2;
 }
 
-
-.left-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Logo Section */
+.name .story {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
-.left-section i {
-  color: #4f46e5;
-  font-size: 18px;
+.book {
+    width: 40px;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
+    color: #5a2ca0;
 }
-
-.top-buttons {
+/* Navigation Links */
+.features {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 25px;
 }
 
-.icon-btn {
+.features .logout{
   width: 36px;
   height: 36px;
-  border-radius: 8px;
-  background: #f3f4f6;
+  background: #fee2e2;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #374151;
+  color: #b91c1c;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: 0.3s;
 }
 
-.icon-btn:hover {
-  background: #e5e7eb;
+.features .logout:hover {
+  background: #c53838;
+  color: #fee2e2;
 }
 
-.icon-btn.logout {
-  background: #fee2e2;
-  color: #991b1b;
+.features a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
+
+.features a:hover {
+  color: #7872ea;
+}
+
 
 /*Page Container */
 .container {

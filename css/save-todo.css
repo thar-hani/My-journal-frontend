@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #dfdfe0;
+  min-height: 100vh;
+}
+
+body{
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #f2f2f2;
+}
+
+/* Logo Section */
+.name .story {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.book {
+    width: 40px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5a2ca0;
+}
+
+/* Navigation Links */
+.features {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.features .logout{
+  width: 36px;
+  height: 36px;
+  background: #fee2e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b91c1c;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.features .logout:hover {
+  background: #c53838;
+  color: #fee2e2;
+}
+
+.features a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.features a:hover {
+  color: #9893ed;
+}
+
+.container {
+  width: 100%;
+  max-width: 750px;
+  margin: 40px auto;   
+  padding: 0 15px;
+}
+/* Tabs Layout */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Left side links */
+.tab-links {
+  display: flex;
+  gap: 85px;
+}
+
+.tab-links a,
+.tab-links span {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #5c2178;
+}
+
+.tab-links .active {
+  border-bottom: 2px solid #5c2178;
+  padding-bottom: 3px;
+}
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 750px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.tabs a,
+.tabs p {
+  text-decoration: none;
+  color: #5c2178;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.tabs .active {
+  border-bottom: 2px solid #5c2178;
+  padding-bottom: 3px;
+}
+
+.new-task {
+  background: #7d60a0;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.new-task:hover {
+  background: #624783;
+}
+
+/* CARD WRAPPER */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* TODO CARD */
+.todo-card {
+  background: white;
+  padding: 15px 18px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-2px);
+}
+
+/* INFO */
+.todo-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.todo-info span {
+  font-size: 13px;
+  color: #555;
+}
+
+.status {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.completed {
+  background: #e6f7ec;
+  color: #1c8c3a;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: #ffecec;
+  color: #b10000;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #ffdddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .todo-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}

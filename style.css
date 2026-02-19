@@ -6,37 +6,41 @@
 }
 
 body {
-  background: #f7f9fc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+body{
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-.navbar {
-  background: #ffffff;
-  padding: 14px 30px;
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 60px;
+  background: #f2f2f2;
 }
 
-.left {
+/* Logo Section */
+.name .story {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #111827;
-  
-} 
+  text-decoration: none;
+}
 
-.left i {
-  color: #4f46e5;
+.book {
+  width: 40px;
 }
 
 .logo {
   font-size: 20px;
   font-weight: 600;
+  color: #5a2ca0;
 }
-
 .right {
   display: flex;
   gap: 15px;
@@ -69,18 +73,13 @@ body {
   flex: 1;
   text-align: center;
   padding: 180px 20px;
+  margin-top: 40px;
 }
 
-.container h1 {
-  font-size: 36px;
-  color: #111827;
-  margin-bottom: 10px;
-  align-items: center;
-}
 
 .subtitle {  
-  color: #656666;
-  margin-bottom: 50px;
+  color: #6e62b1;
+  margin-bottom: 85px;
   padding-right: 40px;  
   align-items: center;
   font-size: 2rem;
@@ -104,8 +103,7 @@ body {
 
 .card:hover {
   transform: rotate(5deg);
-  background: #b9aaca;
-  color: white;
+  background: #c5b8d5;
 }
 
 .card h3 {

@@ -1,4 +1,3 @@
-/* Global Reset*/
 * {
   margin: 0;
   padding: 0;
@@ -6,89 +5,77 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Body */
 body {
   background: #dfdfe0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: #111827;
 }
 
+body{
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-/* nav */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
-  padding: 14px 30px;
+  padding: 20px 60px;
+  background: #f2f2f2;
 }
 
-.left-section {
+/* Logo Section */
+.name .story {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
-.left-section i {
-  color: #4f46e5;
-  font-size: 18px;
+.book {
+  width: 40px;
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  color: #5a2ca0;
 }
 
-.top-buttons {
+/* Navigation Links */
+.features {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 25px;
 }
 
-.icon-btn {
+.features .logout {
   width: 36px;
   height: 36px;
-  border-radius: 8px;
-  background: #f3f4f6;
+  background: #fee2e2;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #374151;
+  color: #b91c1c;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: 0.3s;
 }
 
-.icon-btn:hover {
-  background: #e5e7eb;
+.features .logout:hover {
+  background: #c53838;
+  color: #fee2e2;
 }
 
-.icon-btn.logout {
-  background: #fee2e2;
-  color: #991b1b;
-}
-.wish_list{
-  color: rgb(68, 44, 44);
-  padding: 50px;
-}
-.home-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: #644c86;
-  color: #ffffff;
+.features a {
   text-decoration: none;
-  font-size: 14px;
-  border-radius: 8px;
+  color: #555;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.home-btn i {
-  font-size: 13px;
-}
-
-.home-btn:hover {
-  background: #614978;
+.features a:hover {
+  color: #7872ea;
 }
 
 /* main */
@@ -100,11 +87,17 @@ header {
   text-align: center;
 }
 
+.wish_list{
+  margin-bottom : 20px;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   width: 100%;
+  margin-top: 90px;
+
 }
 
 .card {
@@ -120,7 +113,7 @@ header {
   font-size: 16px;
   font-weight: 500;
   color: #0b0b12;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -152,45 +145,33 @@ textarea:focus {
   background: #6c5986;
 }
 
-.sub-btn{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  width:100%; 
-  text-align:center; 
-  margin-top:80px;
-}
-
-.submit-btn {
-
-  padding: 20px ;
-  font-size: 14px;
-  background: #a0a2a4;
-  color: #060505;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #bdbebe;
-}
-
 .footer {
+  margin-top: 210px;
   text-align: center;
   padding: 14px;
   font-size: 13px;
   color: #fff;
 }
 
-@media (max-width: 1024px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 600px) {
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: #f2f2f2;
+}
+.features {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card{
+  width: 250px;
+}
   .card-container {
+    margin-left: 110px;
+    margin-top: 10px;
     grid-template-columns: 1fr;
   }
 }
