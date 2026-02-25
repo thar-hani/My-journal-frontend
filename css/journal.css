@@ -285,6 +285,13 @@ textarea {
   background: #49476e;
   color: #fff;
 }
+.menu-btn{
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 main textarea {
   width: 100%;
@@ -297,25 +304,83 @@ main textarea {
   transition: border-color 0.3s;
 
 }
-@media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .top-buttons{
-    gap: 2px;
-  }
-  .home-btn{
-    padding: 5px;
-  }
-  .icon-btn{
-    padding: 4px;
-  }
-  header{
-    padding: 5px;
-  }
-  .container{
-    padding: auto;
-  }
+
+
+/* Mobile - 400px */
+@media (max-width: 400px) {
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+  header{
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+  }
+body{
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  .logo{
+    font-size: 16px;
+  }
+
+  .book{
+    width: 28px;
+  }
+
+  .features{
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .container{
+    flex-direction: column;
+  }
+
+  .sidebar{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  /* When user hovers or taps */
+  .sidebar:hover{
+    max-height: 600px;
+    overflow:visible;
+  }
+  .main{
+    padding: 15px;
+  }
+
+  .entry{
+    padding: 10px;
+  }
+
+  .title-input{
+    font-size: 14px;
+  }
+
+  textarea{
+    height: 180px;
+  }
+
+  .buttons{
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cancel,
+  .save{
+    width: 100%;
+    text-align: center;
+  }
+
+}

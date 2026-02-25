@@ -68,6 +68,10 @@ header {
 .features a:hover {
   color: #7872ea;
 }
+.set{
+  display: flex;
+  justify-content:center ;
+}
 
 .container {
   max-width: 700px;
@@ -121,21 +125,78 @@ input[type="time"] {
   font-size: 14px;
   color: #0c0c0c;
 }
-@media (max-width: 768px) {
-  .card-container {
+/* MOBILE RESPONSIVE - 400px */
+@media (max-width: 400px) {
+
+  header{
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    gap: 10px;
   }
-  .top-buttons{
-    gap: 2px;
+
+  .name .story{
+    justify-content: center;
   }
-  .home-btn{
-    padding: 5px;
+
+  .logo{
+    font-size: 16px;
   }
-  .icon-btn{
-    padding: 4px;
+
+  .book{
+    width: 28px;
   }
-  header{
-    padding: 5px;
+
+  /* navigation */
+  .features{
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
+  .features a{
+    font-size: 13px;
+  }
+
+  .features .logout{
+    width: 30px;
+    height: 30px;
+  }
+
+  /* container */
+  .container{
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* card */
+  .card{
+    padding: 12px;
+  }
+
+  .card h2{
+    font-size: 16px;
+  }
+
+  /* rows stack in mobile */
+  .row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  select,
+  input[type="time"]{
+    width: 100%;
+  }
+
+  .btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  .text{
+    font-size: 13px;
+  }
+
 }

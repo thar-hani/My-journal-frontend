@@ -190,13 +190,72 @@ header {
 }
 
 
-@media (max-width: 768px) {
-  .card-container {
+/* MOBILE - 400px */
+@media (max-width: 400px) {
+
+  header{
     flex-direction: column;
-    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
   }
+
+  .logo{
+    font-size: 16px;
+  }
+
+  .book{
+    width: 28px;
+  }
+
+  .features{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .features a{
+    font-size: 13px;
+  }
+
+  .features .logout{
+    width: 30px;
+    height: 30px;
+  }
+
   .profile-box{
-    margin: auto;
-    margin-top: 40px;
+    margin: 20px auto;
+    padding: 25px;
+    width: 95%;
+    margin-top: 80px;
   }
+
+  .profile-header h2{
+    font-size: 18px;
+  }
+
+  .profile-header p{
+    font-size: 13px;
+  }
+
+  .profile-pic img{
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-form input{
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .edit-btn{
+    font-size: 14px;
+    padding: 9px;
+  }
+
+  .back-btn{
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
 }

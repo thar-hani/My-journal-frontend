@@ -163,10 +163,59 @@ form input:focus {
 .save-btn:hover {
   background: #775485;
 }
+/* Mobile - 400px */
+@media (max-width: 400px) {
 
-@media (max-width: 768px) {
-  .card-container {
+  header{
+    padding: 12px;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
+
+  .features{
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .book{
+    width: 28px;
+  }
+
+  .logo{
+    font-size: 16px;
+  }
+
+  .container{
+    margin-top: 80px;
+    padding: 30px 12px;
+  }
+
+  .edit-box{
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .edit-box h2{
+    font-size: 18px;
+  }
+
+  .back-btn{
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+
+  form input{
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .save-btn{
+    padding: 10px;
+    font-size: 14px;
+  }
+
 }

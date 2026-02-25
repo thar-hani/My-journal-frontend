@@ -174,6 +174,30 @@ header {
   transform: translateY(-3px);
 }
 
+.emoji{
+  height: 25px;
+  width: 30px;
+  border-radius: 8px;
+  border: 2px solid rgb(198, 198, 248);
+  background: rgb(198, 198, 248);
+}
+
+.heading{
+  display: flex;
+  gap:15px;
+}
+
+.title{
+  padding: 5px;
+  height: 31px;
+  width: 54px;
+  background: rgb(243, 219, 198);
+  border: 3px solid rgb(241, 223, 192);
+  border-radius: 8px;
+  font-weight: 600 ;
+  color: #9c2121;
+}
+
 /* CONTENT */
 .journal-content h3 {
   font-size: 17px;
@@ -182,7 +206,6 @@ header {
 
 .journal-content span {
   font-size: 13px;
-  color: #777;
 }
 
 .journal-content p {
@@ -208,14 +231,87 @@ header {
 .delete-btn:hover {
   background: #ffdddd;
 }
+/* MOBILE - 400px */
+@media (max-width: 400px) {
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .journal-card {
+  header{
     flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
   }
 
-  .delete-btn {
-    align-self: flex-end;
+  .name .story{
+    justify-content: center;
   }
+
+  .logo{
+    font-size: 16px;
+  }
+
+  .book{
+    width: 28px;
+  }
+
+  /* navigation */
+  .features{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .features a{
+    font-size: 13px;
+  }
+
+  .features .logout{
+    width: 30px;
+    height: 30px;
+  }
+
+  /* container */
+  .container{
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  /* tabs */
+  .tabs{
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tab-links{
+    gap: 25px;
+  }
+
+  .tabs a{
+    font-size: 13px;
+  }
+
+  .new-entry{
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* journal card */
+  .journal-card{
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .journal-content h3{
+    font-size: 15px;
+  }
+
+  .journal-content p{
+    font-size: 13px;
+  }
+
+  .delete-btn{
+    align-self: flex-end;
+    font-size: 11px;
+  }
+
 }

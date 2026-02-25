@@ -10,35 +10,35 @@ body {
   min-height: 100vh;
 }
 
-body{
+body {
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/065/899/194/small/watercolor-blue-floral-background-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #f2f2f2;
 }
 
 /* Logo Section */
 .name .story {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
 .book {
-    width: 40px;
+  width: 40px;
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: 600;
-    color: #5a2ca0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5a2ca0;
 }
 
 /* Navigation */
@@ -48,7 +48,7 @@ header {
   gap: 25px;
 }
 
-.features .logout{
+.features .logout {
   width: 36px;
   height: 36px;
   background: #fee2e2;
@@ -81,9 +81,10 @@ header {
 .container {
   width: 100%;
   max-width: 750px;
-  margin: 40px auto;   
+  margin: 40px auto;
   padding: 0 15px;
 }
+
 /* Tabs Layout */
 .tabs {
   display: flex;
@@ -204,6 +205,19 @@ header {
   color: #1c8c3a;
 }
 
+.cat {
+  display: flex;
+  gap: 20px;
+}
+
+/* Catagory btn */
+button{
+  padding: 5px;
+  border: 1px solid lavender;
+  border-radius: 8px;
+  background: rgb(214, 214, 249);
+}
+
 /* DELETE BUTTON */
 .delete-btn {
   background: #ffecec;
@@ -220,15 +234,89 @@ header {
   background: #ffdddd;
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
+/* MOBILE - 400px and below */
+@media (max-width: 400px) {
+ 
+  /* HEADER */
+  header {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .name .story {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .book {
+    width: 28px;
+  }
+
+  /* NAVIGATION */
+  .features {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .features a {
+    font-size: 13px;
+  }
+
+  .features .logout {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* MAIN CONTAINER */
+  .container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  /* TABS */
+  .tabs {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .tab-links {
+    gap: 25px;
+  }
+
+  .tabs a,
+  .tabs p {
+    font-size: 13px;
+  }
+
+  .new-task {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* WISH CARD */
   .wish-card {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    padding: 12px;
+  }
+
+  .wish-info h3 {
+    font-size: 14px;
+  }
+
+  .wish-info span {
+    font-size: 12px;
   }
 
   .delete-btn {
     align-self: flex-end;
+    font-size: 11px;
+    padding: 5px 10px;
   }
 }

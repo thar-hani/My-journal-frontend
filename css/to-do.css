@@ -173,26 +173,86 @@ input[type="checkbox"]:checked + span {
   color: #030209;
   font-weight: 500;
 }
+/* MOBILE - 400px */
+@media (max-width: 400px) {
 
-@media (max-width: 768px) {
-  .left-section {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .logo{
-    font-weight: 100;
-    font-size: 10px;
-  }
-  .top-buttons{
-    gap: 2px;
-  }
-  .home-btn{
-    padding: 5px;
-  }
-  .icon-btn{
-    padding: 4px;
-  }
   header{
-    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
   }
+
+  .name .story{
+    justify-content: center;
+  }
+
+  .logo{
+    font-size: 16px;
+  }
+
+  .book{
+    width: 28px;
+  }
+
+  /* navigation */
+  .features{
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .features a{
+    font-size: 13px;
+  }
+
+  .features .logout{
+    width: 30px;
+    height: 30px;
+  }
+
+  /* main layout */
+  main{
+    margin-top: 30px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .todo-container{
+    width: 100%;
+    padding: 15px;
+  }
+
+  .todo-container h2{
+    font-size: 18px;
+  }
+
+  .todo-form input{
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .add-btn{
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .todo-list li{
+    padding: 10px;
+  }
+
+  .task-top span{
+    font-size: 14px;
+  }
+
+  .todo-list small{
+    font-size: 11px;
+  }
+
+  .footer-quote{
+    font-size: 12px;
+  }
+
 }
