@@ -159,59 +159,94 @@ header {
 }
 
 /* WISH CARD */
-.wish-card {
-  background: white;
-  padding: 15px 18px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+/* WISH CARD CONTAINER */
+#demo {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* WISH CARD */
+.card {
+  background: #f4f4f4;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.heading{
+  margin: 0;
+  padding: 0;
+  display: flex;
   align-items: center;
-  transition: 0.2s ease;
+  justify-content: space-between;
 }
 
-.wish-card:hover {
-  transform: translateY(-2px);
-}
+.heading p{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+} 
 
-/* INFO */
-.wish-info h3 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.wish-info span {
-  font-size: 13px;
-  color: #555;
-}
-
-/* STATUS */
-.status {
+/* Meta Row (Category + Time) */
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   margin-top: 6px;
+}
+
+/* Category Tag */
+.category {
+  background: #e7e3ff;
+  color: #5c2178;
+  padding: 4px 10px;
+  border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
-  padding: 3px 8px;
+}
+
+/* Time */
+.time {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Status Badge */
+.status {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
   border-radius: 12px;
   display: inline-block;
 }
 
+/* Pending */
 .pending {
-  background: #fff4e5;
+  background: #f9e3c6;
   color: #c77700;
 }
 
+/* Achieved */
 .achieved {
   background: #e6f7ec;
   color: #1c8c3a;
 }
 
-.cat {
-  display: flex;
-  gap: 20px;
-}
-
 /* Catagory btn */
 button{
+  display: flex;
   padding: 5px;
   border: 1px solid lavender;
   border-radius: 8px;
@@ -220,12 +255,12 @@ button{
 
 /* DELETE BUTTON */
 .delete-btn {
-  background: #ffecec;
+  background: #fab4b4;
   color: #b10000;
   border: none;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 6px;
+  padding: 3px;   /* smaller padding */
+  font-size: 13px;    /* smaller text */
+  border-radius: 4px; /* slightly smaller corners */
   cursor: pointer;
   transition: 0.2s;
 }

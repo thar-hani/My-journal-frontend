@@ -36,30 +36,31 @@
       <a href="./to-do-list.html" class="new-task">+ New Task</a>
     </div>
 
-    <!-- Saved Cards -->
-    <div class="card-wrapper">
+    <div id="demo"></div>
+    <script>
+      const container = document.getElementById("demo");
 
-      <div class="todo-card">
-        <div class="todo-info">
-          <h3>Read 20 Minutes</h3>
-          <span>13 Feb 2026 • 07:00 AM</span>
-          <div class="status completed">Completed</div>
-        </div>
-        <button class="delete-btn">Delete</button>
-      </div>
+      fetch("http://127.0.0.1:8000/todos/user/1")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
 
-      <div class="todo-card">
-        <div class="todo-info">
-          <h3>Finish Assignment</h3>
-          <span>12 Feb 2026 • 09:00 PM</span>
-          <div class="status completed">Completed</div>
-        </div>
-        <button class="delete-btn">Delete</button>
-      </div>
+          data.forEach((todo) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
 
-    </div>
+            card.innerHTML = `
+              <h3>${todo.task}</h3>
+              <p>Date: ${todo.date}</p>
+              <p>Time: ${todo.time}</p>
+              <p>Status: ${todo.status}</p>
+            `;
 
-  </div>
+            container.appendChild(card);
+          });
+        })
+        .catch((error) => console.log(error));
+    </script>
 
 </body>
 </html>

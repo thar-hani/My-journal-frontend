@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/save-journal.css" />
 </head>
 <body>
+
   <header class="navbar">
        <div class="name">
         <a href="/index.html" class="story">
@@ -36,37 +37,37 @@
       <a href="./journal.html" class="new-entry">+ New Entry</a>
     </div>
 
-    <!-- Journal Cards -->
-    <div class="card-wrapper">
-
-      <div class="journal-card">
-        <div class="journal-content">
-         <div class="heading"> <h3>Productive Morning </h3><span class="title">Happy</span>  </div>
-        <div><button class="emoji">😃</button>   <span>13 Feb 2026</span></div> 
-
-          <p>
-            Today I woke up early, completed my tasks, and felt very focused.
-            It was a calm and peaceful morning.
-          </p>
-        </div>
-        <button class="delete-btn">Delete</button>
-      </div>
-
-      <div class="journal-card">
-        <div class="journal-content">
-          <div class="heading"><h3>Learning JavaScript </h3><span class="title">Happy</span>  </div>
-          <div><button class="emoji">😃</button>  <span>10 Feb 2026</span></div>
-          <p>
-            Practiced array methods and improved my UI design skills.
-            Feeling more confident now!
-          </p>
-        </div>
-        <button class="delete-btn">Delete</button>
-      </div>
-
-    </div>
+  <div id="demo"></div>
 
   </div>
+
+<script>
+      const container = document.getElementById("demo");
+
+      fetch("http://127.0.0.1:8000/stories/user/1")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          data.forEach((story) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+            <div class="home">
+              <h3>${story.title}</h3>
+              <button class="delete-btn">Delete</button></div>
+              <p>${story.mood} - ${story.date}</p>
+              <p>${story.story}</p>
+            `;
+
+            container.appendChild(card);   
+          });
+        })
+        .catch((error) => console.log(error));
+</script>
+
+
 
 </body>
 </html>
