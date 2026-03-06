@@ -194,13 +194,27 @@ header {
 }
 
 /* Status Styling */
-.card p:last-child {
+/* .card p:last-child {
   display: inline-block;
   margin-top: 8px;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
+  background: #e6f7ec;
+  color: #1c8c3a;
+} */
+
+.pending {
+  font-size: 12px;
+  background: #f9e3c6;
+  border-radius: 5px;
+  padding: 7px;
+  color: #c77700;
+}
+
+/* Achieved */
+.achieved {
   background: #e6f7ec;
   color: #1c8c3a;
 }

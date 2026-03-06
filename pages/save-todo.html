@@ -51,9 +51,9 @@
 
             card.innerHTML = `
               <h3>${todo.task}</h3>
-              <p>Date: ${todo.date}</p>
-              <p>Time: ${todo.time}</p>
-              <p>Status: ${todo.status}</p>
+              <p>${todo.date}</p>
+              <p>${todo.time}</p>
+              <span class="status ${todo.status === "Achieved" ? "achieved" : "pending"}">  ${todo.status} </span>
             `;
 
             container.appendChild(card);
