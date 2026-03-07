@@ -39,39 +39,87 @@
         <a href="./wish-list.html" class="new-task">+ New Wish</a>
       </div>
 
+    <!-- search -->
+       <input type="search" placeholder="Search entries..."  class="search"/><i class="fa-solid fa-magnifying-glass" id="searchBtn"
+   style="color: rgb(177, 151, 252); padding: 10px; cursor: pointer;"></i>
+
       <div id="demo"></div>
     </main>
 
     <script>
-      const container = document.getElementById("demo");
+     const container = document.getElementById("demo");
 
-      fetch("http://127.0.0.1:8000/wishes/user/1")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+fetch("http://127.0.0.1:8000/wishes/user/1")
+  .then((response) => response.json())
+  .then((data) => {
 
-          data.forEach((wish) => {
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.classList.add("wish-card");
+    data.forEach((wish) => {
 
-            card.innerHTML = `
-  <div class="wish-info">
-    <div class="heading">  
-      <h3>${wish.wishes}</h3>
-      <button class="delete-btn">Delete</button>
-    </div>
-      <div class="meta">
-        <span class="category">${wish.categories}</span>
-        <span class="time">${wish.time}</span>
-        <span class="status ${wish.status === "Achieved" ? "achieved" : "pending"}">  ${wish.status} </span>
-  </div>
+      const card = document.createElement("div");
+      card.classList.add("card","wish-card");
+
+      card.innerHTML = `
+      <div class="wish-info">
+        <div class="heading">  
+          <h3>${wish.wishes}</h3>
+          <button class="delete-btn" data-id="${wish.wish_id}">Delete</button>
+        </div>
+
+        <div class="meta">
+          <span class="category">${wish.categories}</span>
+          <span class="time">${wish.time}</span>
+          <span class="status ${wish.status === "Achieved" ? "achieved" : "pending"}">
+            ${wish.status}
+          </span>
+        </div>
       </div>
-`;
-            container.appendChild(card);
-          });
-        })
-        .catch((error) => console.log(error));
+      `;
+
+      container.appendChild(card);
+    });
+
+  });
+
+
+// ✅ SEARCH
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+  let value = document.querySelector(".search").value.toLowerCase();
+  let wishes = document.querySelectorAll(".wish-card");
+
+  wishes.forEach(function(wish){
+
+    if (wish.textContent.toLowerCase().includes(value)) {
+        wish.style.display = "block";
+    } else {
+        wish.style.display = "none";
+    }
+
+  });
+
+});
+
+
+// ✅ DELETE
+container.addEventListener("click", function(e){
+
+  if(e.target.classList.contains("delete-btn")){
+
+    const id = e.target.getAttribute("data-id");
+
+    fetch(`http://127.0.0.1:8000/wishes/${id}`,{
+      method:"DELETE"
+    })
+    .then(res => {
+      if(res.ok){
+        e.target.closest(".wish-card").remove();
+      }
+    })
+    .catch(err => console.log(err));
+
+  }
+
+});
     </script>
   </body>
 </html>

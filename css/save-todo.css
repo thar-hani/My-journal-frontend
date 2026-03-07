@@ -149,7 +149,14 @@ header {
 .new-task:hover {
   background: #624783;
 }
-
+.search{
+  margin-left: 90px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: 500px;
+}
 /* CARD WRAPPER */
 .card-wrapper {
   display: flex;
@@ -160,11 +167,16 @@ header {
 /* TODO CARD */
 /* Cards Container */
 #demo {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-
+.heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 /* Card Design */
 .card {
   background: #ffffff;

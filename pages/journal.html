@@ -43,45 +43,11 @@
       <aside class="sidebar">
         <div class="search-box">
           <h2>Search</h2>
-          <input type="text" placeholder="Search entries..." />
-        </div>
-
-        <div class="filters">
-          <h2><i class="fa-solid fa-filter"></i> Filters</h2>
-          <div class="dropdowns">
-            <select>
-              <option>All Moods</option>
-              <option>Happy</option>
-              <option>Sad</option>
-              <option>Excited</option>
-              <option>Calm</option>
-            </select>
-          </div>
+          <input type="search" placeholder="Search entries..." /><i class="fa-solid fa-magnifying-glass" id="searchBtn"
+   style="color: rgb(177, 151, 252); padding: 10px; cursor: pointer;"></i>
         </div>
 
         <div class="entries">
-          <h3>Entries (2)</h3>
-          <div class="entry">
-            <div class="entry-title">Morning meditation</div>
-            <div class="entry-date">22/09/2025 • 😃</div>
-            <div class="entry-text">
-              Started the day with a 10-minute meditation session.
-            </div>
-            <div class="tags">
-              <div class="tag">Happy</div>
-            </div>
-          </div>
-
-          <div class="entry yellow">
-            <div class="entry-title">Coffee shop discovery</div>
-            <div class="entry-date">19/09/2025 • 😃</div>
-            <div class="entry-text">
-              Found a new café with the perfect writing vibe.
-            </div>
-            <div class="tags">
-              <div class="tag">Happy</div>
-            </div>
-          </div>
         </div>
       </aside>
 
@@ -118,7 +84,7 @@
           </button>
         </div>
 
-        <textarea id="contentInput"  placeholder="What's on your mind today?"></textarea>
+        <div id="contentInput" contenteditable="true" class="editor"></div>
 
         <div class="filters">
           <select id="tagSelect">
@@ -145,18 +111,33 @@ function loadStories() {
         const container = document.querySelector(".entries");
         container.innerHTML = "<h3>Entries</h3>";
 
-        data.forEach(story => {
-    const entry = `
-        <div class="entry">
-            <div class="entry-title">${story.title}</div>
-            <div class="entry-date">${story.date} • ${story.mood}</div>
-            <div class="entry-text">${story.story}</div>
-            <div class="tags">
-                <div class="tag">${story.tags}</div>
-            </div>
+data.slice(-3).reverse().forEach(story => {
+
+    const entryDiv = document.createElement("div");
+    entryDiv.classList.add("entry");
+
+    entryDiv.innerHTML = `
+        <div class="entry-title">${story.title}</div>
+        <div class="entry-date">${story.date} • ${story.mood}</div>
+        <div class="entry-text"></div>
+        <span class="read-more">Read More</span>
+        <div class="tags">
+            <div class="tag">${story.tags}</div>
         </div>
     `;
-    container.innerHTML += entry;
+    const text = entryDiv.querySelector(".entry-text");
+                 text.innerHTML = story.story;
+    const readMoreBtn = entryDiv.querySelector(".read-more");
+
+    readMoreBtn.addEventListener("click", () => {
+
+    localStorage.setItem("selectedStory", JSON.stringify(story));
+
+    window.location.href = "save-journal.html";
+
+});
+
+    container.appendChild(entryDiv);
 });
     });
 }
@@ -165,7 +146,33 @@ function loadStories() {
 loadStories();
 let selectedMood = "";
 
-// Select Emoji
+document.getElementById("contentInput").focus();
+
+const editor = document.getElementById("contentInput");
+
+// Bold
+document.getElementById("bold-btn").addEventListener("click", function() {
+    editor.focus();
+    document.execCommand("bold");
+});
+
+// Italic
+document.getElementById("italic-btn").addEventListener("click", function() {
+    editor.focus();
+    document.execCommand("italic");
+});
+
+// Underline
+document.getElementById("underline-btn").addEventListener("click", function() {
+    editor.focus();
+    document.execCommand("underline");
+});
+
+// Highlight
+document.getElementById("highlight-btn").addEventListener("click", function() {
+    editor.focus();
+    document.execCommand("hiliteColor", false, "yellow");
+});
 
 document.querySelectorAll(".emoji-btn").forEach(button => {
     button.addEventListener("click", function() {
@@ -179,12 +186,36 @@ document.querySelectorAll(".emoji-btn").forEach(button => {
     });
 });
 
+// Search on icon click
+
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+    let value = document.querySelector("input[type='search']").value.toLowerCase();
+    let entries = document.querySelectorAll(".entry");
+
+    entries.forEach(function (entry) {
+
+        if (entry.textContent.toLowerCase().includes(value)) {
+            entry.style.display = "block";
+        } else {
+            entry.style.display = "none";
+        }
+    let msg = document.getElementById("noResult");
+
+  if(!found){
+      msg.style.display = "block";
+  }else{
+      msg.style.display = "none";
+  }
+    });
+
+});
 
 document.getElementById("saveBtn").addEventListener("click", function () {
 
     const date = document.getElementById("dateInput").value;
     const title = document.getElementById("titleInput").value;
-    const content = document.getElementById("contentInput").value;
+    const content = document.getElementById("contentInput").innerHTML;
     const tag = document.getElementById("tagSelect").value;
     
     fetch("http://127.0.0.1:8000/stories/", {

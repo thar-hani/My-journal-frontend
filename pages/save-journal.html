@@ -37,6 +37,9 @@
       <a href="./journal.html" class="new-entry">+ New Entry</a>
     </div>
 
+    <input type="search" placeholder="Search entries..."  class="search"/><i class="fa-solid fa-magnifying-glass" id="searchBtn"
+   style="color: rgb(177, 151, 252); padding: 10px; cursor: pointer;"></i>
+           
   <div id="demo"></div>
 
   </div>
@@ -45,24 +48,65 @@
       const container = document.getElementById("demo");
 
       fetch("http://127.0.0.1:8000/stories/user/1")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+  .then((response) => response.json())
+  .then((data) => {
 
-          data.forEach((story) => {
-            const card = document.createElement("div");
-            card.classList.add("card");
+    // Sort newest first
+    data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            card.innerHTML = `
-            <div class="home">
-              <h3>${story.title}</h3>
-              <button class="delete-btn">Delete</button></div>
-              <p>${story.mood} - ${story.date}</p>
-              <p>${story.story}</p>
-            `;
+   data.forEach((story) => {
 
-            container.appendChild(card);   
-          });
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+  <div class="home">
+    <h3>${story.title}</h3>
+    <button class="delete-btn">Delete</button>
+  </div>
+  <p>${story.mood} - ${story.date}</p>
+  <p>${story.story}</p>
+  `;
+
+  const deleteBtn = card.querySelector(".delete-btn");
+
+  deleteBtn.addEventListener("click", function () {
+
+    fetch(`http://127.0.0.1:8000/stories/${story.story_id}`, {
+      method: "DELETE"
+    })
+    .then(response => {
+      if (response.ok) {
+        card.remove(); // remove card from UI
+      } else {
+        alert("Failed to delete story");
+      }
+    })
+    .catch(error => console.log(error));
+
+  });
+
+  container.appendChild(card);
+
+});
+          
+// Search on icon click
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+    let value = document.querySelector("input[type='search']").value.toLowerCase();
+    let entries = document.querySelectorAll(".card");
+
+    entries.forEach(function (entry) {
+
+        if (entry.textContent.toLowerCase().includes(value)) {
+            entry.style.display = "block";
+        } else {
+            entry.style.display = "none";
+        }
+
+    });
+
+});
         })
         .catch((error) => console.log(error));
 </script>

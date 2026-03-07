@@ -36,6 +36,10 @@
       <a href="./to-do-list.html" class="new-task">+ New Task</a>
     </div>
 
+    <!-- search -->
+       <input type="search" placeholder="Search entries..."  class="search"/><i class="fa-solid fa-magnifying-glass" id="searchBtn"
+   style="color: rgb(177, 151, 252); padding: 10px; cursor: pointer;"></i>
+
     <div id="demo"></div>
     <script>
       const container = document.getElementById("demo");
@@ -53,11 +57,44 @@
               <h3>${todo.task}</h3>
               <p>${todo.date}</p>
               <p>${todo.time}</p>
+              <button class="delete-btn" data-id="${todo.todo_id}">Delete</button>
               <span class="status ${todo.status === "Achieved" ? "achieved" : "pending"}">  ${todo.status} </span>
             `;
 
             container.appendChild(card);
           });
+  document.getElementById("searchBtn").addEventListener("click", function () {
+  let value = document.querySelector(".search").value.toLowerCase();
+  let todos = document.querySelectorAll(".card");
+  todos.forEach(function(todo){
+    if (todo.textContent.toLowerCase().includes(value)) {
+        todo.style.display = "block";
+    }
+    else{
+        todo.style.display = "none";
+    }
+  });
+
+});    
+container.addEventListener("click", function(e){
+
+  if(e.target.classList.contains("delete-btn")){
+
+    const id = e.target.getAttribute("data-id");
+
+    fetch(`http://127.0.0.1:8000/todos/${id}`, {
+      method: "DELETE"
+    })
+    .then(res => {
+      if(res.ok){
+        e.target.closest(".card").remove();
+      }
+    })
+    .catch(err => console.log(err));
+
+  }
+
+});      
         })
         .catch((error) => console.log(error));
     </script>

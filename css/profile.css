@@ -49,6 +49,13 @@ header {
   gap: 25px;
 }
 
+/* Navigation Links */
+.features {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
 .features .logout{
   width: 36px;
   height: 36px;

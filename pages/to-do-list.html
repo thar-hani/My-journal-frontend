@@ -40,46 +40,115 @@
       <section class="todo-container">
         <h2>Today’s Focus</h2>
 
-        <form class="todo-form">
-          <input
-            type="text"
-            placeholder="What do you want to accomplish today?"
-            required
-          />
-          <input type="date" required />
-          <input type="time" required />
-          <button type="submit" class="add-btn">Add Task</button>
-        </form>
+     <form class="todo-form" id="todoForm">
+  <input
+    type="text"
+    id="taskInput"
+    placeholder="What do you want to accomplish today?"
+    required
+  />
+  <input type="date" id="dateInput" required />
+  <input type="time" id="timeInput" required />
+  <button type="submit" class="add-btn">Add Task</button>
+</form>
         
 </section>
 <section class="todo-container">
-        <ul class="todo-list">
-          <li>
-            <div class="task-top">
-              <input type="checkbox" />
-              <span>Finish my journal entry</span>
-            </div>
-            <small> 13 Nov 2025 • 09:00 PM • Pending</small>
-          </li>
-
-          <li>
-            <div class="task-top">
-              <input type="checkbox" checked />
-              <span>Read for 20 minutes</span>
-            </div>
-            <small> 14 Nov 2025 • 08:00 AM • Completed</small>
-          </li>
-
-          <li>
-            <div class="task-top">
-              <input type="checkbox" />
-              <span>Go for a short walk</span>
-            </div>
-            <small> 14 Nov 2025 • 06:30 PM • Pending</small>
-          </li>
+        <ul class="todo-list" id="todoList">
         </ul>
         <p class="footer-quote">One task at a time. You’re doing great</p>
       </section>
     </main>
+
+    <script>
+
+// Load Todos
+function loadTodos() {
+  fetch("http://127.0.0.1:8000/todos/")
+    .then(res => res.json())
+    .then(data => {
+
+      const list = document.getElementById("todoList");
+      list.innerHTML = "";
+
+      data.forEach(todo => {
+const isChecked = todo.status === "Completed" ? "checked" : "";
+
+const li = `
+<li>
+  <div class="task-top">
+    <input type="checkbox"
+           ${isChecked}
+           onchange="updateStatus(${todo.todo_id}, this.checked)" />
+    <span class="${todo.status === "Completed" ? "done" : ""}">
+      ${todo.task}
+    </span>
+  </div>
+
+  <small>
+    ${todo.date} • ${todo.time} • 
+    <b>${todo.status}</b>
+  </small>
+</li>
+`;
+
+        list.innerHTML += li;
+      });
+    });
+}
+
+// Add Todo
+document.getElementById("todoForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const task = document.getElementById("taskInput").value;
+  const date = document.getElementById("dateInput").value;
+  const time = document.getElementById("timeInput").value;
+
+  fetch("http://127.0.0.1:8000/todos/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      user_id: 1,
+      task: task,
+      date: date,
+      time: time,
+      status: "Pending"
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("todoForm").reset();
+    loadTodos();
+  });
+});
+
+// Update Status
+function updateStatus(id, checked) {
+
+  const newStatus = checked ? "Completed" : "Pending";
+
+  fetch(`http://127.0.0.1:8000/todos/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      status: newStatus
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    loadTodos();
+  })
+  .catch(error => console.error(error));
+}
+
+// LOAD TODOS WHEN PAGE OPENS
+loadTodos();
+</script>
+
   </body>
 </html>

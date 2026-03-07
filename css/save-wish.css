@@ -111,6 +111,17 @@ header {
   border-bottom: 2px solid #5c2178;
   padding-bottom: 3px;
 }
+
+.search{
+  margin-left: 90px;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: 500px;
+}
+
 /* CONTAINER */
 .container {
   width: 100%;

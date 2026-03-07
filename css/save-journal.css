@@ -38,10 +38,11 @@ header {
 }
 
 .logo {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 600;
     color: #5a2ca0;
 }
+
 /* Navigation Links */
 .features {
   display: flex;
@@ -148,6 +149,15 @@ header {
 
 .new-entry:hover {
   background: #624783;
+}
+
+.search{
+  margin-left: 90px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: 500px;
 }
 
 /* CARD WRAPPER */

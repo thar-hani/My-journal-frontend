@@ -35,40 +35,106 @@
         ></a>
       </div>
     </header>
-    <!-- main -->
-    <main class="container">
-      <h1 class="wish_list">Wish list</h1>
-      <form class="card-container" action="../index.html">
-        <div class="card">
-          <h3>My Wish</h3>
-          <textarea placeholder="Write your wish here..."></textarea>
-          <button type="button">Save</button>
-        </div>
 
-        <div class="card">
-          <h3>Self Care</h3>
-          <textarea
-            placeholder="What do you want to do for yourself?"
-          ></textarea>
-          <button type="button">Save</button>
-        </div>
+<h1>Wish List</h1>
 
-        <div class="card">
-          <h3>Goal</h3>
-          <textarea placeholder="What goal do you want to achieve?"></textarea>
-          <button type="button">Save</button>
-        </div>
+<div class="container">
 
-        <div class="card">
-          <h3>Carer Wish</h3>
-          <textarea
-            placeholder="Something you want to experience..."
-          ></textarea>
-          <button type="button">Save</button>
-        </div>
-      </form>
-    </main>
+  <div class="card">
+    <h3>My Wish</h3>
+    <textarea id="wishText" placeholder="Write your wish here..."></textarea>
+    <button type="button" id="wishBtn">Save</button>
+  </div>
 
-    <footer class="footer">© 2025 My Journal • Wishes are safe here.</footer>
+  <div class="card">
+    <h3>Self Care</h3>
+    <textarea id="selfCareText" placeholder="What do you want to do for yourself?"></textarea>
+    <button type="button" id="selfCareBtn">Save</button>
+  </div>
+
+  <div class="card">
+    <h3>Goal</h3>
+    <textarea id="goalText" placeholder="What goal do you want to achieve?"></textarea>
+    <button type="button" id="goalBtn">Save</button>
+  </div>
+
+  <div class="card">
+    <h3>Career Wish</h3>
+    <textarea id="careerText" placeholder="Something you want to experience..."></textarea>
+    <button type="button" id="careerBtn">Save</button>
+  </div>
+
+</div>
+</div>
+<script>
+
+// Self Care
+document.getElementById("selfCareBtn").addEventListener("click", function() {
+    const text = document.getElementById("selfCareText").value;
+    saveWish("Self Care", text);
+});
+
+// Goal
+document.getElementById("goalBtn").addEventListener("click", function() {
+    const text = document.getElementById("goalText").value;
+    saveWish("Goal", text);
+});
+
+// Career Wish
+document.getElementById("careerBtn").addEventListener("click", function() {
+    const text = document.getElementById("careerText").value;
+    saveWish("Career Wish", text);
+});
+    function saveWish(category, textareaId) {
+
+        const wishText = document.getElementById(textareaId).value;
+
+        if (!wishText.trim()) {
+            alert("Please write something first!");
+            return;
+        }
+
+        fetch("http://127.0.0.1:8000/wishes/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: 1,
+                categories: category,
+                wishes: wishText,
+                status: "Planning",
+                time: new Date().toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                   })
+
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(category + " saved successfully!");
+            document.getElementById(textareaId).value = "";
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    }
+
+    document.getElementById("wishBtn").onclick = () => saveWish("My Wish", "wishText");
+    document.getElementById("selfCareBtn").onclick = () => saveWish("Self Care", "selfCareText");
+    document.getElementById("goalBtn").onclick = () => saveWish("Goal", "goalText");
+    document.getElementById("careerBtn").onclick = () => saveWish("Career Wish", "careerText");
+
+// Example button
+document.getElementById("wishBtn").addEventListener("click", function() {
+    const text = document.getElementById("wishText").value;
+    saveWish("My Wish", text);
+});
+
+</script>
   </body>
 </html>
