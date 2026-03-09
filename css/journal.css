@@ -207,7 +207,10 @@ header {
 }
 
 .title-input {
-  width: 100%;
+   display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 1100px;
   padding: 10px;
   border: 1px ;
   border-radius: 6px;
@@ -215,6 +218,7 @@ header {
 }
 
 .editor {
+  width: 1200px;
   min-height: 150px;
   border: 2px solid #f6f3f3;
   padding: 10px;
