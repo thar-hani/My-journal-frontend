@@ -136,6 +136,40 @@ header {
   border-bottom: 2px solid #5c2178;
   padding-bottom: 3px;
 }
+/* Top row */
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Second row */
+.info-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* Date */
+.date{
+  font-size: 14px;
+  color: #333;
+}
+
+/* Time */
+.time{
+  font-size: 13px;
+  color: #777;
+}
+
+/* Status badge */
+.status{
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
 
 .new-task {
   background: #7d60a0;
@@ -164,7 +198,6 @@ header {
   gap: 18px;
 }
 
-/* TODO CARD */
 /* Cards Container */
 #demo {
   margin-top: 10px;
@@ -204,23 +237,20 @@ header {
   color: #555;
   margin-bottom: 5px;
 }
+.pending{
+  background: #f9e3c6;
+  color: #c77700;
+}
 
-/* Status Styling */
-/* .card p:last-child {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+.achieved{
   background: #e6f7ec;
   color: #1c8c3a;
-} */
+}
 
 .pending {
   font-size: 12px;
   background: #f9e3c6;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 7px;
   color: #c77700;
 }

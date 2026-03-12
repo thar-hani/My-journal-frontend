@@ -19,8 +19,8 @@
   <body>
     <header>
        <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -47,23 +47,23 @@
             <p class="active">Register</p>
           </div>
 
-          <form>
+          <form onsubmit="register(event)">
             <label>Full Name</label>
             <div class="input-field">
-              <input type="text" placeholder="Enter your name" required />
+              <input type="text" id="regName" placeholder="Enter your name" required />
             </div>
 
             <label>Email</label>
             <div class="input-field">
-              <input type="email" placeholder="Enter your email" required />
+              <input type="email" id="regEmail" placeholder="Enter your email" required />
             </div>
 
             <label>Password</label>
             <div class="input-field">
-              <input type="password" placeholder="Enter password" required />
+              <input type="password" id="regPassword" placeholder="Enter password" required />
             </div>
 
-            <button class="login-btn">Register</button>
+            <button type="submit" class="login-btn">Register</button>
 
             <div class="extra-links">
               <a href="./login.html">Already have an account? Login</a>
@@ -74,5 +74,34 @@
         </div>
       </div>
     </div>
+    <script>
+    async function register(event){
+        event.preventDefault();
+        const full_name = document.getElementById("regName").value;
+        const emailID = document.getElementById("regEmail").value;
+        const password = document.getElementById("regPassword").value;
+
+        const response = await fetch("http://localhost:8000/users/register",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                full_name: full_name,
+                emailID: emailID,
+                password: password,
+            })
+        });
+
+        const data = await response.json();
+
+        if(response.ok){
+            alert(" Registration Successful! Please login.");
+            window.location.href="../pages/login.html";
+        } else {
+            alert(" Registration Failed: " + (data.detail || "Unknown error"));
+        }
+    }
+    </script>
   </body>
 </html>

@@ -22,8 +22,8 @@
   <body>
     <header>
       <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -44,7 +44,7 @@
         <div class="search-box">
           <h2>Search</h2>
           <input type="search" placeholder="Search entries..." /><i class="fa-solid fa-magnifying-glass" id="searchBtn"
-   style="color: rgb(177, 151, 252); padding: 10px; cursor: pointer;"></i>
+   style="color: rgb(177, 151, 252); padding: 7px; cursor: pointer;"></i>
         </div>
 
         <div class="entries">
@@ -104,7 +104,16 @@
     </div>
 <script>
 function loadStories() {
-    fetch("http://127.0.0.1:8000/stories/")
+    const userId = localStorage.getItem("user_id");
+    if (!userId) {
+        window.location.href = "login.html";
+        return;
+    }
+    fetch("http://127.0.0.1:8000/stories/", {
+        headers: {
+            "X-User-ID": userId
+        }
+    })
     .then(res => res.json())
     .then(data => {
 
@@ -219,13 +228,14 @@ document.getElementById("saveBtn").addEventListener("click", function () {
     const content = document.getElementById("contentInput").innerHTML;
     const tag = document.getElementById("tagSelect").value;
     
+    const userId = localStorage.getItem("user_id");
     fetch("http://127.0.0.1:8000/stories/", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "X-User-ID": userId
         },
         body: JSON.stringify({
-        user_id: 1,             
         date: date,
         title: title,
         story: content,          

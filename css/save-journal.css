@@ -137,7 +137,39 @@ header {
   border-bottom: 2px solid #5c2178;
   padding-bottom: 3px;
 }
+/* row alignment */
+.info{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 6px;
+}
 
+/* mood badge */
+.mood{
+  background: #e8dbff;
+  color: #5c2178;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* date style */
+.date{
+  font-size: 14px;
+  color: #333;
+}
+
+/* tag style */
+.tag{
+  background: #f5d7b5;
+  color: #c26a00;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
 .new-entry {
   background: #7d60a0;
   color: white !important;

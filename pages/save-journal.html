@@ -11,8 +11,8 @@
 
   <header class="navbar">
        <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -47,7 +47,15 @@
 <script>
       const container = document.getElementById("demo");
 
-      fetch("http://127.0.0.1:8000/stories/user/1")
+      const userId = localStorage.getItem("user_id");
+      if (!userId) {
+          window.location.href = "login.html";
+      } else {
+      fetch("http://127.0.0.1:8000/stories/", {
+          headers: {
+              "X-User-ID": userId
+          }
+      })
   .then((response) => response.json())
   .then((data) => {
 
@@ -59,21 +67,30 @@
   const card = document.createElement("div");
   card.classList.add("card");
 
-  card.innerHTML = `
-  <div class="home">
-    <h3>${story.title}</h3>
-    <button class="delete-btn">Delete</button>
-  </div>
-  <p>${story.mood} - ${story.date}</p>
-  <p>${story.story}</p>
-  `;
+card.innerHTML = `
+<div class="home">
+  <h3>${story.title}</h3>
+  <button class="delete-btn">Delete</button>
+</div>
+
+<div class="info">
+  <span class="mood">${story.mood}</span>
+  <span class="date">${story.date}</span>
+  <span class="tag">${story.tags}</span>
+</div>
+
+<p>${story.story}</p>
+`;
 
   const deleteBtn = card.querySelector(".delete-btn");
 
   deleteBtn.addEventListener("click", function () {
 
     fetch(`http://127.0.0.1:8000/stories/${story.story_id}`, {
-      method: "DELETE"
+      method: "DELETE",
+      headers: {
+          "X-User-ID": userId
+      }
     })
     .then(response => {
       if (response.ok) {
@@ -109,6 +126,7 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 });
         })
         .catch((error) => console.log(error));
+      } // end else
 </script>
 
 

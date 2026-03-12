@@ -18,8 +18,8 @@
   <body>
     <header>
       <div class="name">
-        <a href="/index.html" class="story">
-          <img src="/assets/book (1).png" class="book" />
+        <a href="../index.html" class="story">
+          <img src="../assets/book (1).png" class="book" />
           <div class="logo">My Journal</div>
         </a>
       </div>
@@ -71,13 +71,13 @@ async function login(event){
     const email = document.getElementById("loginEmail").value
     const password = document.getElementById("loginPassword").value
 
-    const response = await fetch("http://localhost:8000/login",{
+    const response = await fetch("http://localhost:8000/users/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
         },
         body:JSON.stringify({
-            email:email,
+            emailID:email,
             password:password
         })
     })
@@ -86,14 +86,13 @@ async function login(event){
 
     if(data.user_id){
         localStorage.setItem("user_id",data.user_id)
+        localStorage.setItem("full_name", data.full_name)
 
-        alert("✅ Login Successful")
-
-        // redirect after login
+        alert("Login Successful")
         window.location.href="../pages/save-journal.html"
     }
     else{
-        alert("❌ Invalid Email or Password")
+        alert("Invalid Email or Password")
     }
 }
 </script>

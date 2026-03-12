@@ -18,8 +18,8 @@
   <body>
     <header>
       <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -68,25 +68,7 @@
 </div>
 <script>
 
-// Self Care
-document.getElementById("selfCareBtn").addEventListener("click", function() {
-    const text = document.getElementById("selfCareText").value;
-    saveWish("Self Care", text);
-});
-
-// Goal
-document.getElementById("goalBtn").addEventListener("click", function() {
-    const text = document.getElementById("goalText").value;
-    saveWish("Goal", text);
-})
-
-// Career Wish
-document.getElementById("careerBtn").addEventListener("click", function() {
-    const text = document.getElementById("careerText").value;
-    saveWish("Career Wish", text);
-});
     function saveWish(category, textareaId) {
-
         const wishText = document.getElementById(textareaId).value;
 
         if (!wishText.trim()) {
@@ -94,33 +76,49 @@ document.getElementById("careerBtn").addEventListener("click", function() {
             return;
         }
 
+        const userId = localStorage.getItem("user_id");
+        if (!userId) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('en-IN', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+        const timeStr = now.toLocaleTimeString('en-IN', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
         fetch("http://127.0.0.1:8000/wishes/", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-User-ID": userId
             },
             body: JSON.stringify({
-                user_id: 1,
                 categories: category,
                 wishes: wishText,
                 status: "Planning",
-                time: new Date().toLocaleString('en-IN', {
-                    day: '2-digit',
-                    month: 'short',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                   })
-
+                date: dateStr,
+                time: timeStr
             })
         })
         .then(response => response.json())
         .then(data => {
-            alert(category + " saved successfully!");
-            document.getElementById(textareaId).value = "";
+            if (data.wish_id) {
+                alert(category + " saved successfully!");
+                document.getElementById(textareaId).value = "";
+            } else {
+                alert("Failed to save wish: " + (data.detail || "Unknown error"));
+            }
         })
         .catch(error => {
             console.error("Error:", error);
+            alert("An error occurred while saving the wish.");
         });
     }
 
@@ -128,12 +126,6 @@ document.getElementById("careerBtn").addEventListener("click", function() {
     document.getElementById("selfCareBtn").onclick = () => saveWish("Self Care", "selfCareText");
     document.getElementById("goalBtn").onclick = () => saveWish("Goal", "goalText");
     document.getElementById("careerBtn").onclick = () => saveWish("Career Wish", "careerText");
-
-// Example button
-document.getElementById("wishBtn").addEventListener("click", function() {
-    const text = document.getElementById("wishText").value;
-    saveWish("My Wish", text);
-});
 
 </script>
   </body>

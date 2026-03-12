@@ -10,8 +10,8 @@
 <body>
   <header class="navbar">
        <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -44,7 +44,15 @@
     <script>
       const container = document.getElementById("demo");
 
-      fetch("http://127.0.0.1:8000/todos/user/1")
+      const userId = localStorage.getItem("user_id");
+      if (!userId) {
+          window.location.href = "login.html";
+      } else {
+      fetch("http://127.0.0.1:8000/todos/", {
+          headers: {
+              "X-User-ID": userId
+          }
+      })
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
@@ -53,13 +61,18 @@
             const card = document.createElement("div");
             card.classList.add("card");
 
-            card.innerHTML = `
+           card.innerHTML = `
+            <div class="heading">
               <h3>${todo.task}</h3>
-              <p>${todo.date}</p>
-              <p>${todo.time}</p>
               <button class="delete-btn" data-id="${todo.todo_id}">Delete</button>
-              <span class="status ${todo.status === "Achieved" ? "achieved" : "pending"}">  ${todo.status} </span>
-            `;
+            </div>
+
+            <div class="info-row">
+              <span class="date">${todo.date}</span>
+              <span class="time">${todo.time}</span>
+              <span class="status ${todo.status === "Achieved" ? "achieved" : "pending"}">${todo.status}</span>
+            </div>
+          `;
 
             container.appendChild(card);
           });
@@ -83,7 +96,10 @@ container.addEventListener("click", function(e){
     const id = e.target.getAttribute("data-id");
 
     fetch(`http://127.0.0.1:8000/todos/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
+      headers: {
+          "X-User-ID": userId
+      }
     })
     .then(res => {
       if(res.ok){
@@ -97,6 +113,7 @@ container.addEventListener("click", function(e){
 });      
         })
         .catch((error) => console.log(error));
+      } // end else
     </script>
 
 </body>

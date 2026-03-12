@@ -19,8 +19,8 @@
   <body>
     <header>
       <div class="name">
-        <a href="/index.html" class="story">
-            <img src="/assets/book (1).png" class="book">
+        <a href="../index.html" class="story">
+            <img src="../assets/book (1).png" class="book">
             <div class="logo">My Journal</div>
         </a>
     </div>
@@ -64,7 +64,16 @@
 
 // Load Todos
 function loadTodos() {
-  fetch("http://127.0.0.1:8000/todos/")
+  const userId = localStorage.getItem("user_id");
+  if (!userId) {
+      window.location.href = "login.html";
+      return;
+  }
+  fetch("http://127.0.0.1:8000/todos/", {
+    headers: {
+      "X-User-ID": userId
+    }
+  })
     .then(res => res.json())
     .then(data => {
 
@@ -105,13 +114,14 @@ document.getElementById("todoForm").addEventListener("submit", function(e) {
   const date = document.getElementById("dateInput").value;
   const time = document.getElementById("timeInput").value;
 
+  const userId = localStorage.getItem("user_id");
   fetch("http://127.0.0.1:8000/todos/", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "X-User-ID": userId
     },
     body: JSON.stringify({
-      user_id: 1,
       task: task,
       date: date,
       time: time,
@@ -130,10 +140,12 @@ function updateStatus(id, checked) {
 
   const newStatus = checked ? "Completed" : "Pending";
 
+  const userId = localStorage.getItem("user_id");
   fetch(`http://127.0.0.1:8000/todos/${id}`, {
     method: "PUT",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "X-User-ID": userId
     },
     body: JSON.stringify({
       status: newStatus

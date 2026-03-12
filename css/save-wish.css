@@ -220,7 +220,7 @@ header {
   background: #e7e3ff;
   color: #5c2178;
   padding: 4px 10px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -239,7 +239,7 @@ header {
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
-  border-radius: 12px;
+  border-radius: 10px;
   display: inline-block;
 }
 

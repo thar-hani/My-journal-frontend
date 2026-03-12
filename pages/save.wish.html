@@ -14,8 +14,8 @@
   <body>
     <header>
       <div class="name">
-        <a href="/index.html" class="story">
-          <img src="/assets/book (1).png" class="book" />
+        <a href="../index.html" class="story">
+          <img src="../assets/book (1).png" class="book" />
           <div class="logo">My Journal</div>
         </a>
       </div>
@@ -49,7 +49,15 @@
     <script>
      const container = document.getElementById("demo");
 
-fetch("http://127.0.0.1:8000/wishes/user/1")
+     const userId = localStorage.getItem("user_id");
+     if (!userId) {
+         window.location.href = "login.html";
+     } else {
+         fetch("http://127.0.0.1:8000/wishes/", {
+    headers: {
+        "X-User-ID": userId
+    }
+})
   .then((response) => response.json())
   .then((data) => {
 
@@ -67,6 +75,7 @@ fetch("http://127.0.0.1:8000/wishes/user/1")
 
         <div class="meta">
           <span class="category">${wish.categories}</span>
+          <span class="date">${wish.date}</span>
           <span class="time">${wish.time}</span>
           <span class="status ${wish.status === "Achieved" ? "achieved" : "pending"}">
             ${wish.status}
@@ -108,7 +117,10 @@ container.addEventListener("click", function(e){
     const id = e.target.getAttribute("data-id");
 
     fetch(`http://127.0.0.1:8000/wishes/${id}`,{
-      method:"DELETE"
+      method:"DELETE",
+      headers: {
+          "X-User-ID": userId
+      }
     })
     .then(res => {
       if(res.ok){
@@ -120,6 +132,7 @@ container.addEventListener("click", function(e){
   }
 
 });
+}
     </script>
   </body>
 </html>
